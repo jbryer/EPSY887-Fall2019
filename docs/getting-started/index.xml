@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting Started on EPSY 887 - Intro to R for Academic Researchers</title>
+    <link>https://epsy887fall2019.bryer.org/getting-started/</link>
+    <description>Recent content in Getting Started on EPSY 887 - Intro to R for Academic Researchers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Oct 2017 15:26:15 +0000</lastBuildDate>
+    
+	<atom:link href="https://epsy887fall2019.bryer.org/getting-started/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Textbooks</title>
+      <link>https://epsy887fall2019.bryer.org/getting-started/textbooks/</link>
+      <pubDate>Tue, 17 Oct 2017 14:00:45 +0000</pubDate>
+      
+      <guid>https://epsy887fall2019.bryer.org/getting-started/textbooks/</guid>
+      <description>Wickham, H., &amp;amp; Grolemund, G. (2016) R for Data Science. O&amp;rsquo;Reilly.
+ Most of this books is available freely online at r4ds.had.co.nz/ but can be purchased from Amazon.
+ Wickham, H. (2014) Advanced R. Baca Raton, FL: Taylor &amp;amp; Francis Group.
+ Most of this book is available freely online at adv-r.had.co.nz but can be purchased from Amazon.
+ James, G., Witten, D., Hastie, T., &amp;amp; Tibshirani, R. (2013). An Introduction to Statistical Learning with Applications in R.</description>
+    </item>
+    
+    <item>
+      <title>Installation</title>
+      <link>https://epsy887fall2019.bryer.org/getting-started/installation/</link>
+      <pubDate>Tue, 17 Oct 2017 15:26:15 +0000</pubDate>
+      
+      <guid>https://epsy887fall2019.bryer.org/getting-started/installation/</guid>
+      <description>You will need to download a number of programs to get started, including R, RStudio, and LaTeX.
+ R - Windows or Mac RStudio - Download Windows or Mac version from here LaTeX - Windows use MiKTeX or Mac use BasicTeX  If using Windows, you also need to download and install these:
+ RTools ActivePerl  </description>
+    </item>
+    
+  </channel>
+</rss>

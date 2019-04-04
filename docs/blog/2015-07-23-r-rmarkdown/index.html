@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Hello R Markdown - EPSY 887 - Intro to R for Academic Researchers</title>
+<meta name="description" content="Fall 2019">
+<meta name="generator" content="Hugo 0.49.2" />
+<link href="https://epsy887fall2019.bryer.orgindex.xml" rel="alternate" type="application/rss+xml">
+<link rel="canonical" href="https://epsy887fall2019.bryer.org/blog/2015-07-23-r-rmarkdown/">
+<link rel="stylesheet" href="https://epsy887fall2019.bryer.org/css/theme.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link rel="stylesheet" href="https://epsy887fall2019.bryer.org/css/chroma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://epsy887fall2019.bryer.org/js/functions.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+<script src="https://epsy887fall2019.bryer.org/js/jquery.backtothetop/jquery.backtothetop.min.js"></script></head>
+<body>
+<div class="container"><header>
+<h1>EPSY 887 - Intro to R for Academic Researchers</h1>
+<a href="https://github.com/jbryer/EPSY887-Fall2019" class="github"><i class="fab fa-github"></i></a>
+<p class="description">Fall 2019</p>
+
+</header>
+<div class="menu">
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/schedule/">Schedule</a></li>
+<li><a href="/contact/">Contact</a></li></ul>
+</nav>
+</div>
+<div class="content-container">
+<main><h1>Hello R Markdown</h1><div id="r-markdown" class="section level1">
+<h1>R Markdown</h1>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>You can embed an R code chunk like this:</p>
+<pre class="r"><code>summary(cars)
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+fit &lt;- lm(dist ~ speed, data = cars)
+fit
+## 
+## Call:
+## lm(formula = dist ~ speed, data = cars)
+## 
+## Coefficients:
+## (Intercept)        speed  
+##     -17.579        3.932</code></pre>
+</div>
+<div id="including-plots" class="section level1">
+<h1>Including Plots</h1>
+<p>You can also embed plots. See Figure <a href="#fig:pie">1</a> for example:</p>
+<pre class="r"><code>par(mar = c(0, 1, 0, 1))
+pie(
+  c(280, 60, 20),
+  c(&#39;Sky&#39;, &#39;Sunny side of pyramid&#39;, &#39;Shady side of pyramid&#39;),
+  col = c(&#39;#0292D8&#39;, &#39;#F7EA39&#39;, &#39;#C4B632&#39;),
+  init.angle = -50, border = NA
+)</code></pre>
+<div class="figure"><span id="fig:pie"></span>
+<img src="/blog/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png" alt="A fancy pie chart." width="672" />
+<p class="caption">
+Figure 1: A fancy pie chart.
+</p>
+</div>
+</div>
+<footer><p class="powered">Powered by <a href="https://gohugo.io">Hugo</a>. Theme by <a href="https://themes.gohugo.io/hugo-theme-techdoc/">TechDoc</a>. Designed by <a href="https://github.com/thingsym/hugo-theme-techdoc">Thingsym</a>.</p>
+</footer>
+</main><div class="sidebar">
+<nav>
+<ul>
+<li class=""><a href="https://epsy887fall2019.bryer.org">Home</a></li>
+
+<li class=""><a href="/getting-started/">Getting Started</a>
+<ul class="">
+<li class=""><a href="/getting-started/textbooks/">Textbooks</a></li>
+<li class=""><a href="/getting-started/installation/">Installation</a></li>
+</ul>
+  
+</li>
+
+<li class=""><a href="/class-notes/">Class Notes</a>
+</li>
+
+
+
+
+</ul>
+</nav>
+
+
+<div class="sidebar-footer"></div>
+</div>
+</div><a href="#" id="backtothetop-fixed" class="backtothetop"
+ data-backtothetop-duration="600"
+ data-backtothetop-easing="easeOutQuart"
+ data-backtothetop-fixed-fadeIn="1000"
+ data-backtothetop-fixed-fadeOut="1000"
+ data-backtothetop-fixed-bottom="10"
+ data-backtothetop-fixed-right="20">
+<span class="fa-layers fa-fw">
+<i class="fas fa-circle"></i>
+<i class="fas fa-arrow-circle-up"></i>
+</span></a>
+</div>
+</body>
+</html>

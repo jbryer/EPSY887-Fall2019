@@ -1,0 +1,53 @@
+baseURL = "https://epsy887fall2019.bryer.org"
+
+publishDir = "docs/"
+
+languageCode = "en-us"
+DefaultContentLanguage = "en"
+title = "EPSY 887 - Intro to R for Academic Researchers"
+theme = "hugo-theme-techdoc"
+
+hasCJKLanguage = true
+metaDataFormat = "yaml"
+
+pygmentsUseClasses = true
+pygmentsCodefences = true
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir= false
+enableMissingTranslationPlaceholders = false
+
+[Params]
+
+    # Souce Code repository section
+    description = "Fall 2019"
+    github_repository = "https://github.com/jbryer/EPSY887-Fall2019"
+    version = ""
+
+    # Documentation repository section
+    # documentation repository (set edit link to documentation repository)
+    github_doc_repository = "https://github.com/jbryer/EPSY887-Fall2019"
+
+    # Analytic section
+    google_analytics_id = "" # Your Google Analytics tracking id
+    tag_manager_container_id = "" # Your Google Tag Manager container id
+    google_site_verification = "" # Your Google Site Verification
+
+    # Theme settings section
+    dateformat = "January 2, 2006" # default "2 Jan 2006"
+    # See the format reference https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
+
+    # path name excluded from documentation menu
+    menu_exclusion = ["archives", "blog", "entry", "post", "posts"]
+
+
+# Global menu section
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+# [[menu.main]]
+#    name = "Twitter"
+#    url = "https://twitter.com/jbryer"
+#    weight = 2

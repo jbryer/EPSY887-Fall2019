@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Class Notes on EPSY 887 - Intro to R for Academic Researchers</title>
+    <link>https://epsy887fall2019.bryer.org/class-notes/</link>
+    <description>Recent content in Class Notes on EPSY 887 - Intro to R for Academic Researchers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Oct 2017 15:26:15 +0000</lastBuildDate>
+    
+	<atom:link href="https://epsy887fall2019.bryer.org/class-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
