@@ -1,10 +1,10 @@
-baseURL = "https://epsy887fall2019.bryer.org"
+baseURL = "https://epsy887.bryer.org"
 
 publishDir = "docs/"
 
 languageCode = "en-us"
 DefaultContentLanguage = "en"
-title = "EPSY 887 - Intro to R for Academic Researchers"
+title = "Intro to R for Academic Researchers"
 theme = "hugo-theme-techdoc"
 
 hasCJKLanguage = true
@@ -20,7 +20,7 @@ enableMissingTranslationPlaceholders = false
 [Params]
 
     # Souce Code repository section
-    description = "Fall 2019"
+    description = "University at Albany - EPSY 887 - Fall 2019"
     github_repository = "https://github.com/jbryer/EPSY887-Fall2019"
     version = ""
 
