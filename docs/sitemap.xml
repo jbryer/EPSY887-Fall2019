@@ -3,94 +3,82 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://epsy887fall2019.bryer.org/getting-started/textbooks/</loc>
-    <lastmod>2017-10-17T14:00:45+00:00</lastmod>
+    <loc>/getting_started/</loc>
+    <lastmod>2018-12-08T15:26:15+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://epsy887fall2019.bryer.org/getting-started/</loc>
-    <lastmod>2018-12-05T15:26:15+00:00</lastmod>
+    <loc>/getting_started/software/</loc>
+    <lastmod>2018-12-08T15:26:15+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://epsy887fall2019.bryer.org/class-notes/</loc>
-    <lastmod>2017-10-17T15:26:15+00:00</lastmod>
+    <loc>/getting_started/resources/</loc>
+    <lastmod>2018-12-08T15:26:15+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://epsy887fall2019.bryer.org/getting-started/installation/</loc>
-    <lastmod>2017-10-17T15:26:15+00:00</lastmod>
+    <loc>/getting_started/mathjax/</loc>
   </url>
   
   <url>
-    <loc>https://epsy887fall2019.bryer.org/schedule/</loc>
+    <loc>/r/</loc>
+  </url>
+  
+  <url>
+    <loc>/r/intror/</loc>
+  </url>
+  
+  <url>
+    <loc>/r/data_wrangling/</loc>
+  </url>
+  
+  <url>
+    <loc>/r/data_visualization/</loc>
+  </url>
+  
+  <url>
+    <loc>/r/programming/</loc>
+  </url>
+  
+  <url>
+    <loc>/r/communicating/</loc>
+  </url>
+  
+  <url>
+    <loc>/r/shiny/</loc>
+  </url>
+  
+  <url>
+    <loc>/r/packages/</loc>
+  </url>
+  
+  <url>
+    <loc>/statistics/psa/</loc>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2018-12-08T15:26:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/schedule/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://epsy887fall2019.bryer.org/posts/hello_world/</loc>
-    <lastmod>2017-10-17T14:00:45+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://epsy887fall2019.bryer.org/contact/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://epsy887fall2019.bryer.org/</loc>
-    <lastmod>2018-12-05T15:26:15+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://epsy887fall2019.bryer.org/blog/2015-07-23-r-rmarkdown/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://epsy887fall2019.bryer.org/blog/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://epsy887fall2019.bryer.org/categories/</loc>
+    <loc>/statistics/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://epsy887fall2019.bryer.org/tags/plot/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://epsy887fall2019.bryer.org/posts/</loc>
-    <lastmod>2017-10-17T14:00:45+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://epsy887fall2019.bryer.org/categories/r/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://epsy887fall2019.bryer.org/tags/r-markdown/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://epsy887fall2019.bryer.org/tags/regression/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://epsy887fall2019.bryer.org/tags/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+    <loc>/tags/</loc>
     <priority>0</priority>
   </url>
   

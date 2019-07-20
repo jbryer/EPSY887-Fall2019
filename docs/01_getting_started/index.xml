@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting Started on Intro to R for Academic Researchers</title>
+    <link>/01_getting_started/</link>
+    <description>Recent content in Getting Started on Intro to R for Academic Researchers</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Oct 2017 15:26:15 +0000</lastBuildDate>
+    
+	<atom:link href="/01_getting_started/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Software</title>
+      <link>/01_getting_started/installation/</link>
+      <pubDate>Tue, 17 Oct 2017 15:26:15 +0000</pubDate>
+      
+      <guid>/01_getting_started/installation/</guid>
+      <description> R - Windows or Mac RStudio - Download Windows or Mac version from here LaTeX - Windows use MiKTeX or Mac use BasicTeX  If using Windows, you also need to download and install these:
+ RTools ActivePerl  </description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>/01_getting_started/resources/</link>
+      <pubDate>Tue, 17 Oct 2017 15:26:15 +0000</pubDate>
+      
+      <guid>/01_getting_started/resources/</guid>
+      <description>Textbooks Wickham, H., &amp;amp; Grolemund, G. (2016) R for Data Science. O&amp;rsquo;Reilly.
+ Most of this books is available freely online at r4ds.had.co.nz/ but can be purchased from Amazon.
+ Wickham, H. (2014) Advanced R. Baca Raton, FL: Taylor &amp;amp; Francis Group.
+ Most of this book is available freely online at adv-r.had.co.nz but can be purchased from Amazon.
+ James, G., Witten, D., Hastie, T., &amp;amp; Tibshirani, R. (2013).</description>
+    </item>
+    
+  </channel>
+</rss>

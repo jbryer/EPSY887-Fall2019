@@ -1,81 +1,122 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>EPSY 887 - Intro to R for Academic Researchers</title>
-    <link>https://epsy887fall2019.bryer.org/</link>
-    <description>Recent content on EPSY 887 - Intro to R for Academic Researchers</description>
+    <title>Intro to R for Academic Researchers</title>
+    <link>/</link>
+    <description>Recent content on Intro to R for Academic Researchers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Oct 2017 15:26:15 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Oct 2017 15:26:15 +0000</lastBuildDate>
     
-	<atom:link href="https://epsy887fall2019.bryer.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Textbooks</title>
-      <link>https://epsy887fall2019.bryer.org/getting-started/textbooks/</link>
-      <pubDate>Tue, 17 Oct 2017 14:00:45 +0000</pubDate>
+      <title>Software</title>
+      <link>/getting_started/software/</link>
+      <pubDate>Tue, 17 Oct 2017 15:26:15 +0000</pubDate>
       
-      <guid>https://epsy887fall2019.bryer.org/getting-started/textbooks/</guid>
-      <description>Wickham, H., &amp;amp; Grolemund, G. (2016) R for Data Science. O&amp;rsquo;Reilly.
- Most of this books is available freely online at r4ds.had.co.nz/ but can be purchased from Amazon.
- Wickham, H. (2014) Advanced R. Baca Raton, FL: Taylor &amp;amp; Francis Group.
- Most of this book is available freely online at adv-r.had.co.nz but can be purchased from Amazon.
- James, G., Witten, D., Hastie, T., &amp;amp; Tibshirani, R. (2013). An Introduction to Statistical Learning with Applications in R.</description>
+      <guid>/getting_started/software/</guid>
+      <description>R and RStudio  R - Windows or Mac RStudio - Download Windows or Mac version from here  If using Windows, you also need to download and install these:
+ RTools ActivePerl  R Packages Once R is installed, install the following R packages.
+install.packages(c(&#39;devtools&#39;, &#39;tidyverse&#39;, &#39;psych&#39;, &#39;reshape2&#39;, &#39;blogdown&#39;, &#39;bookdown&#39;, &#39;shiny&#39;, &#39;markdown&#39;, &#39;knitr&#39;, &#39;openintro&#39;, &#39;OIdata&#39;, &#39;fivethirdyeight&#39;)) devtools::install_github(&#39;jbryer/likert&#39;) devtools::install_github(&amp;quot;jbryer/DATA606&amp;quot;)  LaTeX LaTeX is a typesetting language for preparing documents. Documents are written in plain text files.</description>
     </item>
     
     <item>
-      <title>Installation</title>
-      <link>https://epsy887fall2019.bryer.org/getting-started/installation/</link>
+      <title>Resources</title>
+      <link>/getting_started/resources/</link>
       <pubDate>Tue, 17 Oct 2017 15:26:15 +0000</pubDate>
       
-      <guid>https://epsy887fall2019.bryer.org/getting-started/installation/</guid>
-      <description>You will need to download a number of programs to get started, including R, RStudio, and LaTeX.
- R - Windows or Mac RStudio - Download Windows or Mac version from here LaTeX - Windows use MiKTeX or Mac use BasicTeX  If using Windows, you also need to download and install these:
- RTools ActivePerl  </description>
+      <guid>/getting_started/resources/</guid>
+      <description>Books Wickham, H., &amp;amp; Grolemund, G. (2016) R for Data Science. O&amp;rsquo;Reilly.
+ Most of this books is available freely online at r4ds.had.co.nz/ but can be purchased from Amazon.
+ Wickham, H. (2014) Advanced R. Baca Raton, FL: Taylor &amp;amp; Francis Group.
+ Most of this book is available freely online at adv-r.had.co.nz but can be purchased from Amazon.
+ James, G., Witten, D., Hastie, T., &amp;amp; Tibshirani, R. (2013).</description>
+    </item>
+    
+    <item>
+      <title>Math Equations</title>
+      <link>/getting_started/mathjax/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/getting_started/mathjax/</guid>
+      <description>Occasionally you will need to type equations in homework and labs. R Markdown supports LaTeX style equations using the MathJax javascript library. I do not expect you to learn LaTeX for this course. Instead, I recommend using the free application Daum Equation Editor. It availabe online, as a Google Chrome Extension, or as a standalone Mac Application.
+Creating Equations with Daum Equation Editor Occasionally you will need to type equations in homework and labs.</description>
+    </item>
+    
+    <item>
+      <title>Intro to R and RStudio</title>
+      <link>/r/intror/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/r/intror/</guid>
+      <description> Assignment Complete Lab0 from the DATA606 R package. The following commands will copy the lab template to your current working directory. Read the markdown file answering the questions within the document.
+DATA606::startLab(&#39;Lab0&#39;)  Readings  The preface and introduction of R for Data Science book. History and Overview of R chapter from R Programming for Data Science book by Roger Peng. Thieme, N. (2018). R generation. Significance, 15(4), 14-19.  </description>
+    </item>
+    
+    <item>
+      <title>Data Wrangling</title>
+      <link>/r/data_wrangling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/r/data_wrangling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Visualization</title>
+      <link>/r/data_visualization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/r/data_visualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>/r/programming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/r/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Communicating</title>
+      <link>/r/communicating/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/r/communicating/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shiny</title>
+      <link>/r/shiny/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/r/shiny/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R Packages</title>
+      <link>/r/packages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/r/packages/</guid>
+      <description></description>
     </item>
     
     <item>
       <title>Schedule</title>
-      <link>https://epsy887fall2019.bryer.org/schedule/</link>
+      <link>/schedule/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://epsy887fall2019.bryer.org/schedule/</guid>
-      <description>All classes meet from 4:15pm to 7:05pm.
-   Date Topic1     August 29 Intro to Course, Getting started with R   September 5 Data Visualization   September 12 Programming in R   September 19    September 26    October 3    October 10    October 17    October 24    October 31    November 7    November 14    November 28 NO CLASS - THANKSGIVING   December 5 Presentations     Tentative, subject to change.</description>
-    </item>
-    
-    <item>
-      <title>Hello_world</title>
-      <link>https://epsy887fall2019.bryer.org/posts/hello_world/</link>
-      <pubDate>Tue, 17 Oct 2017 14:00:45 +0000</pubDate>
-      
-      <guid>https://epsy887fall2019.bryer.org/posts/hello_world/</guid>
-      <description>aaaaaa
-vvvv
-aaa</description>
-    </item>
-    
-    <item>
-      <title>Contact</title>
-      <link>https://epsy887fall2019.bryer.org/contact/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://epsy887fall2019.bryer.org/contact/</guid>
-      <description>Office hours by appointment.
-Email: jason.bryer@gmail.com
-Twitter: @jbryer</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>https://epsy887fall2019.bryer.org/blog/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>https://epsy887fall2019.bryer.org/blog/2015-07-23-r-rmarkdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+      <guid>/schedule/</guid>
+      <description>This schedule is tentative and is subject to changed based upon the interests of the class
+   Date Topic     August 29 Introduction to R and RStudio   September 5 Data wrangling   September 12 Data visualization   September 19 Programming with R   September 26 Documenting with R: Rmarkdown, blogdown, bookdown   October 3 Interactive websites with shiny   October 10 The ananytomy of an R package   October 17 Classification and regression tree (CART) methods   October 24 Bayesian analysis   October 31    November 7 Propensity score analysis   November 14 Advanced propensity score analysis   November 21 Factor analysis (exploratory and confirmatory)   November 28 No class - Happy Thanksgiving!</description>
     </item>
     
   </channel>

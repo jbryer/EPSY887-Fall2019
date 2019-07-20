@@ -1,29 +1,26 @@
 ---
+title: "Schedule"
 date: "2014-04-09"
-draft: false
-menu: main
-title: Schedule
-weight: 10
+menu: "main"
 ---
 
-All classes meet from 4:15pm to 7:05pm.
-
-Date         | Topic[^1]
-:------------|:-------------------------------------------
-August 29    | Intro to Course, Getting started with R
-September 5  | Data Visualization
-September 12 | Programming in R
-September 19 | 
-September 26 | 
-October 3    | 
-October 10   | 
-October 17   | 
-October 24   | 
-October 31   | 
-November 7   | 
-November 14  | 
-November 28  | **NO CLASS - THANKSGIVING**
-December 5   | Presentations
-
-
-[^1]: Tentative, subject to change.
+*This schedule is tentative and is subject to changed based upon the interests of the class*
+	
+Date          | Topic
+--------------|----------------------------------------------------------------
+August 29     | [Introduction to R and RStudio](/r/intror/)
+September 5   | Data wrangling
+September 12  | Data visualization
+September 19  | Programming with R
+September 26  | Documenting with R: `Rmarkdown`, `blogdown`, `bookdown`
+October 3     | Interactive websites with `shiny`
+October 10    | The ananytomy of an R package
+October 17    | Classification and regression tree (CART) methods
+October 24    | Bayesian analysis
+October 31    | 
+November 7    | Propensity score analysis
+November 14   | Advanced propensity score analysis
+November 21   | Factor analysis (exploratory and confirmatory)
+November 28   | No class - Happy Thanksgiving!
+December 5    | Presentations
+December 12   | Presentations
