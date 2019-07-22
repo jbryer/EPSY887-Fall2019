@@ -25,10 +25,12 @@ Once R is installed, install the following R packages.
 ```
 install.packages(c('devtools', 'tidyverse', 'psych', 'reshape2',
 	'blogdown', 'bookdown', 'shiny', 'markdown', 'knitr',
+	'foreign',
 	'openintro', 'OIdata', 'fivethirdyeight'))
 devtools::install_github('jbryer/likert')
 devtools::install_github("jbryer/DATA606")
 ```
+
 
 
 ## LaTeX

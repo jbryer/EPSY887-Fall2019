@@ -15,9 +15,9 @@ September 19  | Programming with R
 September 26  | Documenting with R: `Rmarkdown`, `blogdown`, `bookdown`
 October 3     | Interactive websites with `shiny`
 October 10    | The ananytomy of an R package
-October 17    | Classification and regression tree (CART) methods
-October 24    | Bayesian analysis
-October 31    | 
+October 17    | 
+October 24    | Classification and regression tree (CART) methods
+October 31    | Bayesian analysis
 November 7    | Propensity score analysis
 November 14   | Advanced propensity score analysis
 November 21   | Factor analysis (exploratory and confirmatory)

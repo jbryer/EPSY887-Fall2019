@@ -19,7 +19,17 @@
       <guid>/getting_started/software/</guid>
       <description>R and RStudio  R - Windows or Mac RStudio - Download Windows or Mac version from here  If using Windows, you also need to download and install these:
  RTools ActivePerl  R Packages Once R is installed, install the following R packages.
-install.packages(c(&#39;devtools&#39;, &#39;tidyverse&#39;, &#39;psych&#39;, &#39;reshape2&#39;, &#39;blogdown&#39;, &#39;bookdown&#39;, &#39;shiny&#39;, &#39;markdown&#39;, &#39;knitr&#39;, &#39;openintro&#39;, &#39;OIdata&#39;, &#39;fivethirdyeight&#39;)) devtools::install_github(&#39;jbryer/likert&#39;) devtools::install_github(&amp;quot;jbryer/DATA606&amp;quot;)  LaTeX LaTeX is a typesetting language for preparing documents. Documents are written in plain text files.</description>
+install.packages(c(&#39;devtools&#39;, &#39;tidyverse&#39;, &#39;psych&#39;, &#39;reshape2&#39;, &#39;blogdown&#39;, &#39;bookdown&#39;, &#39;shiny&#39;, &#39;markdown&#39;, &#39;knitr&#39;, &#39;foreign&#39;, &#39;openintro&#39;, &#39;OIdata&#39;, &#39;fivethirdyeight&#39;)) devtools::install_github(&#39;jbryer/likert&#39;) devtools::install_github(&amp;quot;jbryer/DATA606&amp;quot;)  LaTeX LaTeX is a typesetting language for preparing documents.</description>
+    </item>
+    
+    <item>
+      <title>Data</title>
+      <link>/getting_started/data/</link>
+      <pubDate>Tue, 17 Oct 2017 15:26:15 +0000</pubDate>
+      
+      <guid>/getting_started/data/</guid>
+      <description>Programme of International Student Assessment Click here to go to the download page for the 2015 PISA results. Results from 2012, 2009, 2006, 2003, and 2000 are also available. Download the SPSS version of the files. You will also want to download the codebook files.
+FiveThirtyEight FiveThirtyEight makes a lot of their datasets freely available. There is also an R package that has some of those datasets preformatted for R.</description>
     </item>
     
     <item>
@@ -116,7 +126,7 @@ DATA606::startLab(&#39;Lab0&#39;)  Readings  The preface and introduction of R f
       
       <guid>/schedule/</guid>
       <description>This schedule is tentative and is subject to changed based upon the interests of the class
-   Date Topic     August 29 Introduction to R and RStudio   September 5 Data wrangling   September 12 Data visualization   September 19 Programming with R   September 26 Documenting with R: Rmarkdown, blogdown, bookdown   October 3 Interactive websites with shiny   October 10 The ananytomy of an R package   October 17 Classification and regression tree (CART) methods   October 24 Bayesian analysis   October 31    November 7 Propensity score analysis   November 14 Advanced propensity score analysis   November 21 Factor analysis (exploratory and confirmatory)   November 28 No class - Happy Thanksgiving!</description>
+   Date Topic     August 29 Introduction to R and RStudio   September 5 Data wrangling   September 12 Data visualization   September 19 Programming with R   September 26 Documenting with R: Rmarkdown, blogdown, bookdown   October 3 Interactive websites with shiny   October 10 The ananytomy of an R package   October 17    October 24 Classification and regression tree (CART) methods   October 31 Bayesian analysis   November 7 Propensity score analysis   November 14 Advanced propensity score analysis   November 21 Factor analysis (exploratory and confirmatory)   November 28 No class - Happy Thanksgiving!</description>
     </item>
     
   </channel>
