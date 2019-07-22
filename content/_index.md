@@ -23,7 +23,7 @@ It is recommended that students have at least two graduate level statistics cour
 
 ### Grading
 
-This course is graded as pass/fail. Successful students will attend and participate in the weekly classes as well as contribute the course wiki is expected. Weekly assignments may be assigned as necessary. 
+This course is graded as pass/fail. Successful students will attend and participate in the weekly classes as well as contribute to the course wiki. Weekly assignments will be assigned as appropriate. 
 
 * **Website** - Students are to create a website using either the `blogdown` or `bookdown` R package.
 * **Presentation** - The culmination of the course will be a short (20 to 30 minutes) presentation and document outlining the analysis you conducted with your dataset. Students are encouraged to bring their own dataset (e.g. data to be used for a dissertation), but that is not necessary. Many free and public datasets are available for use and will be discussed in the first couple classes.
