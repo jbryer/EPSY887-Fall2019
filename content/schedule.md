@@ -23,4 +23,4 @@ November 14   | Advanced propensity score analysis
 November 21   | Factor analysis (exploratory and confirmatory)
 November 28   | No class - Happy Thanksgiving!
 December 5    | Presentations
-December 12   | Presentations
+December 12   | 

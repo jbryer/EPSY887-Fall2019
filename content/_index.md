@@ -10,7 +10,7 @@ publishdate: 2018-11-23T15:26:15Z
 ***Class Time:*** 		Thursdays 4:15 p.m. - 7:05  p.m.  
 ***Class Location:***  	TBD  
 ***Grading:*** 			3 credits, S/U grading  
-***Course Website:*** 	https://github.com/jbryer/EPSY887-Fall2019
+***Course Website:*** 	https://epsy887.bryer.org
 
 
 R is a statistical program language that has grown in popularity over the last two decades arguably becoming the de facto standard in statistics, data science, and learning analytics (see e.g. Muenchen, 2018; Suda, 2017). R was designed to be scriptable and extensible which makes it well suited for conducting reproducible research and creating publication quality figures. Moreover, the over 10,000 packages available on the Comprehensive R Archive Network (CRAN) provide researchers with access to a rich community and library of tools for conducting research.
