@@ -17,6 +17,15 @@ R is a statistical program language that has grown in popularity over the last t
 
 This course will explore the skills and tools necessary for conducting data preparation and analysis with R. The first third of the course will focus on learning [R](http://www.r-project.org). The middle third will explore some of the more common statistical procedures in R including: classification and regression trees; logistic regression; propensity score analysis; missing data imputation; and other topics as time permits. The final third of the class will be left for topics of special interest to students and their research agendas. Class examples will utilize the [Programme of International Student Assessment](http://www.oecd.org/pisa/) (PISA), a large scale international study conducted every three years. Other open and freely available datasets will also be discussed as appropriate.
 
+### Learning Objectives
+
+At the completion of this course, students will be able to...
+
+* Conduct a complete analysis in R including data entry, tidying, analysis, and reporting.
+* Structure analyses to facilitate reproducible research.
+* Create advanced visualizations using the grammar of graphics.
+* Conduct advanced statistical analyses in R.
+
 ### Prerequisites
 
 It is recommended that students have at least two graduate level statistics courses (EPSY 530 and EPSY 630 or equivalent). Those with fewer than two graduate statistics courses but with other relevant experience should get instructor permission. No prior experiences with R is expected, but some experience with using statistical software would be helpful.
