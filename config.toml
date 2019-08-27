@@ -54,6 +54,11 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     url = "https://github.com/jbryer/EPSY887-Fall2019"
     weight = 10
     
+[[menu.main]]
+    name = "Slack"
+    url = "https://epsy887fall2019.slack.com"
+    weight = 20
+    
 # [[menu.main]]
 #    name = "Twitter"
 #    url = "https://twitter.com/jbryer"
