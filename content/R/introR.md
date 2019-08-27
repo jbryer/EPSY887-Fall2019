@@ -1,6 +1,6 @@
 ---
 title: "Intro to R and RStudio"
-draft: true
+draft: false
 weight: 21
 ---
 

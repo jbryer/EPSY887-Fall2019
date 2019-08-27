@@ -8,7 +8,7 @@ publishdate: 2018-11-23T15:26:15Z
 
 ***Instructor:***		Jason Bryer, Ph.D. (jason@bryer.org)   
 ***Class Time:*** 		Thursdays 4:15 p.m. - 7:05  p.m.  
-***Class Location:***  	TBD  
+***Class Location:***  	AS 013  
 ***Grading:*** 			3 credits, S/U grading  
 ***Course Website:*** 	https://epsy887.bryer.org
 
@@ -34,8 +34,10 @@ It is recommended that students have at least two graduate level statistics cour
 
 This course is graded as pass/fail. Successful students will attend and participate in the weekly classes as well as contribute to the course wiki. Weekly assignments will be assigned as appropriate. 
 
-* **Website** - Students are to create a website using either the `blogdown` or `bookdown` R package.
-* **Presentation** - The culmination of the course will be a short (20 to 30 minutes) presentation and document outlining the analysis you conducted with your dataset. Students are encouraged to bring their own dataset (e.g. data to be used for a dissertation), but that is not necessary. Many free and public datasets are available for use and will be discussed in the first couple classes.
+* **Participation** (10%) - Participate in class and the Slack discussions.
+* **Labs** (20%) - R Labs will be assigned as appropriate.
+* **Website** (30%) - Students are to create a website using either the `blogdown` or `bookdown` R package.
+* **Presentation** (40%) - The culmination of the course will be a short (20 to 30 minutes) presentation and document outlining the analysis you conducted with your dataset. Students are encouraged to bring their own dataset (e.g. data to be used for a dissertation), but that is not necessary. Many free and public datasets are available for use and will be discussed in the first couple classes.
 
 ### References
 

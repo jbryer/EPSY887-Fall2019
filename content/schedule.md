@@ -18,9 +18,9 @@ October 10    | The ananytomy of an R package
 October 17    | Classification and regression tree (CART) methods
 October 24    | Propensity score analysis
 October 31    | Advanced propensity score analysis
-November 7    | Factor analysis (exploratory and confirmatory)
-November 14   | Bayesian analysis
-November 21   | No class meeting - Video will be posted
-November 28   | No class - Happy Thanksgiving!
+November 7    | **TBD Possible GoToMeeting class.** Factor analysis (exploratory and confirmatory)
+November 14   | Text Analysis
+November 21   | **No class meeting** - Video will be posted - Bayesian analysis
+November 28   | **No class - Happy Thanksgiving! 🦃**
 December 5    | Presentations
 December 12   | Presentations / Course wrap-up

@@ -1,6 +1,6 @@
 ---
 title: "Shiny"
-draft: true
+draft: false
 weight: 26
 ---
 

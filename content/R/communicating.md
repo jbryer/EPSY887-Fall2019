@@ -1,6 +1,6 @@
 ---
 title: "Communicating"
-draft: true
+draft: false
 weight: 25
 ---
 

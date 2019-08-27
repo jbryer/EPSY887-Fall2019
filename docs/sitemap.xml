@@ -3,86 +3,78 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/getting_started/</loc>
+    <loc>https://epsy887.bryer.org/getting_started/</loc>
     <lastmod>2018-12-08T15:26:15+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/getting_started/software/</loc>
+    <loc>https://epsy887.bryer.org/getting_started/software/</loc>
     <lastmod>2018-12-08T15:26:15+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/getting_started/data/</loc>
+    <loc>https://epsy887.bryer.org/getting_started/data/</loc>
     <lastmod>2018-12-08T15:26:15+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/getting_started/resources/</loc>
+    <loc>https://epsy887.bryer.org/getting_started/resources/</loc>
     <lastmod>2018-12-08T15:26:15+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/getting_started/mathjax/</loc>
+    <loc>https://epsy887.bryer.org/getting_started/mathjax/</loc>
   </url>
   
   <url>
-    <loc>/r/</loc>
+    <loc>https://epsy887.bryer.org/r/</loc>
   </url>
   
   <url>
-    <loc>/statistics/</loc>
+    <loc>https://epsy887.bryer.org/r/intror/</loc>
   </url>
   
   <url>
-    <loc>/r/intror/</loc>
+    <loc>https://epsy887.bryer.org/r/data_wrangling/</loc>
   </url>
   
   <url>
-    <loc>/r/data_wrangling/</loc>
+    <loc>https://epsy887.bryer.org/r/data_visualization/</loc>
   </url>
   
   <url>
-    <loc>/r/data_visualization/</loc>
+    <loc>https://epsy887.bryer.org/r/programming/</loc>
   </url>
   
   <url>
-    <loc>/r/programming/</loc>
+    <loc>https://epsy887.bryer.org/r/communicating/</loc>
   </url>
   
   <url>
-    <loc>/r/communicating/</loc>
+    <loc>https://epsy887.bryer.org/r/shiny/</loc>
   </url>
   
   <url>
-    <loc>/r/shiny/</loc>
+    <loc>https://epsy887.bryer.org/r/packages/</loc>
   </url>
   
   <url>
-    <loc>/r/packages/</loc>
-  </url>
-  
-  <url>
-    <loc>/statistics/psa/</loc>
-  </url>
-  
-  <url>
-    <loc>/</loc>
+    <loc>https://epsy887.bryer.org/</loc>
     <lastmod>2018-12-08T15:26:15+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/schedule/</loc>
+    <loc>https://epsy887.bryer.org/schedule/</loc>
     <lastmod>2014-04-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://epsy887.bryer.org/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://epsy887.bryer.org/tags/</loc>
     <priority>0</priority>
   </url>
   

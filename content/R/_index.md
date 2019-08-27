@@ -1,6 +1,6 @@
 ---
 title: "R Programming"
-draft: true
+draft: false
 weight: 20
 ---
 

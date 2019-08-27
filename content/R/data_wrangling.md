@@ -1,6 +1,6 @@
 ---
 title: "Data Wrangling"
-draft: true
+draft: false
 weight: 22
 ---
 

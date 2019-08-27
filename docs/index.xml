@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Intro to R for Academic Researchers</title>
-    <link>/</link>
+    <link>https://epsy887.bryer.org/</link>
     <description>Recent content on Intro to R for Academic Researchers</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 19 Oct 2017 15:26:15 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://epsy887.bryer.org/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Software</title>
-      <link>/getting_started/software/</link>
+      <link>https://epsy887.bryer.org/getting_started/software/</link>
       <pubDate>Tue, 17 Oct 2017 15:26:15 +0000</pubDate>
       
-      <guid>/getting_started/software/</guid>
+      <guid>https://epsy887.bryer.org/getting_started/software/</guid>
       <description>R and RStudio  R - Windows or Mac RStudio - Download Windows or Mac version from here  If using Windows, you also need to download and install these:
  RTools ActivePerl  R Packages Once R is installed, install the following R packages.
 install.packages(c(&#39;devtools&#39;, &#39;tidyverse&#39;, &#39;psych&#39;, &#39;reshape2&#39;, &#39;blogdown&#39;, &#39;bookdown&#39;, &#39;shiny&#39;, &#39;markdown&#39;, &#39;knitr&#39;, &#39;foreign&#39;, &#39;openintro&#39;, &#39;OIdata&#39;, &#39;fivethirdyeight&#39;)) devtools::install_github(&#39;jbryer/likert&#39;) devtools::install_github(&amp;quot;jbryer/DATA606&amp;quot;)  LaTeX LaTeX is a typesetting language for preparing documents.</description>
@@ -24,20 +24,20 @@ install.packages(c(&#39;devtools&#39;, &#39;tidyverse&#39;, &#39;psych&#39;, &#3
     
     <item>
       <title>Data</title>
-      <link>/getting_started/data/</link>
+      <link>https://epsy887.bryer.org/getting_started/data/</link>
       <pubDate>Tue, 17 Oct 2017 15:26:15 +0000</pubDate>
       
-      <guid>/getting_started/data/</guid>
+      <guid>https://epsy887.bryer.org/getting_started/data/</guid>
       <description>Programme of International Student Assessment Click here to go to the download page for the 2015 PISA results. Results from 2012, 2009, 2006, 2003, and 2000 are also available. Download the SPSS version of the files. You will also want to download the codebook files.
 FiveThirtyEight FiveThirtyEight makes a lot of their datasets freely available. There is also an R package that has some of those datasets preformatted for R.</description>
     </item>
     
     <item>
       <title>Resources</title>
-      <link>/getting_started/resources/</link>
+      <link>https://epsy887.bryer.org/getting_started/resources/</link>
       <pubDate>Tue, 17 Oct 2017 15:26:15 +0000</pubDate>
       
-      <guid>/getting_started/resources/</guid>
+      <guid>https://epsy887.bryer.org/getting_started/resources/</guid>
       <description>Books Wickham, H., &amp;amp; Grolemund, G. (2016) R for Data Science. O&amp;rsquo;Reilly.
  Most of this books is available freely online at r4ds.had.co.nz/ but can be purchased from Amazon.
  Wickham, H. (2014) Advanced R. Baca Raton, FL: Taylor &amp;amp; Francis Group.
@@ -47,86 +47,86 @@ FiveThirtyEight FiveThirtyEight makes a lot of their datasets freely available. 
     
     <item>
       <title>Math Equations</title>
-      <link>/getting_started/mathjax/</link>
+      <link>https://epsy887.bryer.org/getting_started/mathjax/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/getting_started/mathjax/</guid>
+      <guid>https://epsy887.bryer.org/getting_started/mathjax/</guid>
       <description>Occasionally you will need to type equations in homework and labs. R Markdown supports LaTeX style equations using the MathJax javascript library. I do not expect you to learn LaTeX for this course. Instead, I recommend using the free application Daum Equation Editor. It availabe online, as a Google Chrome Extension, or as a standalone Mac Application.
 Creating Equations with Daum Equation Editor Occasionally you will need to type equations in homework and labs.</description>
     </item>
     
     <item>
       <title>Intro to R and RStudio</title>
-      <link>/r/intror/</link>
+      <link>https://epsy887.bryer.org/r/intror/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/r/intror/</guid>
+      <guid>https://epsy887.bryer.org/r/intror/</guid>
       <description> Assignment Complete Lab0 from the DATA606 R package. The following commands will copy the lab template to your current working directory. Read the markdown file answering the questions within the document.
 DATA606::startLab(&#39;Lab0&#39;)  Readings  The preface and introduction of R for Data Science book. History and Overview of R chapter from R Programming for Data Science book by Roger Peng. Thieme, N. (2018). R generation. Significance, 15(4), 14-19.  </description>
     </item>
     
     <item>
       <title>Data Wrangling</title>
-      <link>/r/data_wrangling/</link>
+      <link>https://epsy887.bryer.org/r/data_wrangling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/r/data_wrangling/</guid>
+      <guid>https://epsy887.bryer.org/r/data_wrangling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data Visualization</title>
-      <link>/r/data_visualization/</link>
+      <link>https://epsy887.bryer.org/r/data_visualization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/r/data_visualization/</guid>
+      <guid>https://epsy887.bryer.org/r/data_visualization/</guid>
       <description> Readings  Chapter 1 of R for Data Science book. Gelman, A., Pasarica, C., &amp;amp; Dodhia, R. (2002). Let&amp;rsquo;s practice what we preach: Turning tables into graphcs. The American Statistician, 56(2), 121-130.  </description>
     </item>
     
     <item>
       <title>Programming</title>
-      <link>/r/programming/</link>
+      <link>https://epsy887.bryer.org/r/programming/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/r/programming/</guid>
+      <guid>https://epsy887.bryer.org/r/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Communicating</title>
-      <link>/r/communicating/</link>
+      <link>https://epsy887.bryer.org/r/communicating/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/r/communicating/</guid>
+      <guid>https://epsy887.bryer.org/r/communicating/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Shiny</title>
-      <link>/r/shiny/</link>
+      <link>https://epsy887.bryer.org/r/shiny/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/r/shiny/</guid>
+      <guid>https://epsy887.bryer.org/r/shiny/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R Packages</title>
-      <link>/r/packages/</link>
+      <link>https://epsy887.bryer.org/r/packages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/r/packages/</guid>
+      <guid>https://epsy887.bryer.org/r/packages/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Schedule</title>
-      <link>/schedule/</link>
+      <link>https://epsy887.bryer.org/schedule/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/schedule/</guid>
+      <guid>https://epsy887.bryer.org/schedule/</guid>
       <description>This schedule is tentative and is subject to changed based upon the interests of the class
-   Date Topic     August 29 Introduction to R and RStudio   September 5 Data wrangling   September 12 Data visualization   September 19 Programming with R   September 26 Documenting with R: Rmarkdown, blogdown, bookdown   October 3 Interactive websites with shiny   October 10 The ananytomy of an R package   October 17 Classification and regression tree (CART) methods   October 24 Propensity score analysis   October 31 Advanced propensity score analysis   November 7 Factor analysis (exploratory and confirmatory)   November 14 Bayesian analysis   November 21 No class meeting - Video will be posted   November 28 No class - Happy Thanksgiving!</description>
+   Date Topic     August 29 Introduction to R and RStudio   September 5 Data wrangling   September 12 Data visualization   September 19 Programming with R   September 26 Documenting with R: Rmarkdown, blogdown, bookdown   October 3 Interactive websites with shiny   October 10 The ananytomy of an R package   October 17 Classification and regression tree (CART) methods   October 24 Propensity score analysis   October 31 Advanced propensity score analysis   November 7 TBD Possible GoToMeeting class.</description>
     </item>
     
   </channel>

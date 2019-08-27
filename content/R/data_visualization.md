@@ -1,6 +1,6 @@
 ---
 title: "Data Visualization"
-draft: true
+draft: false
 weight: 23
 ---
 
