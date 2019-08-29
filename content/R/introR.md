@@ -9,7 +9,7 @@ weight: 21
 Complete Lab0 from the `DATA606` R package. The following commands will copy the lab template to your current working directory. Read the markdown file answering the questions within the document.
 
 ```
-DATA606::startLab('Lab0')
+DATA606::startLab('Lab1')
 ```
 
 
