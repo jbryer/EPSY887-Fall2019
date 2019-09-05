@@ -1,6 +1,4 @@
 private/
-/slides/01-Intro_to_Course_files/
-/slides/02-IntroR_files/
 
 # History files
 .Rhistory
@@ -20,10 +18,6 @@ private/
 
 # RStudio files
 .Rproj.user/
-
-# produced vignettes
-vignettes/*.html
-vignettes/*.pdf
 
 # OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
 .httr-oauth
