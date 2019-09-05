@@ -1,0 +1,162 @@
+---
+title: "Intro to R for Academic Researchers"
+subtitle: "EPSY 887 - Fall 2019"
+author: "Jason Bryer, Ph.D."
+institute: "University at Albany"
+date: 2019-08-29
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts, my-theme.css]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+# Agenda
+
+* Introductions
+* Survey
+* Syllabus
+	* Course schedule
+	* Assignments
+* Intro to R and RStudio
+* One minute papers
+
+---
+
+# Introduction
+
+A little about me:
+
+* Currently Executive Director at [Excelsior College](http://excelsior.edu)
+	* Principal Investigator for a Department of Education Grant (part of their FIPSE First in the World program) to develop a Diagnostic Assessment and Achievement of College Skills ([www.DAACS.net](http://www.daacs.net))
+* Authored over a dozen R packages including:
+	* [likert](http://github.com/jbryer/likert)
+	* [sqlutils](http://github.com/jbryer/sqlutils)
+	* [timeline](http://github.com/jbryer/timeline)
+* Specialize in propensity score methods. Three new methods/R packages developed include:
+	* [multilevelPSA](http://github.com/jbryer/multilevelPSA)
+	* [TriMatch](http://github.com/jbryer/TriMatch)
+	* [PSAboot](http://github.com/jbryer/PSAboot)
+
+---
+
+# Also a Father...
+
+<center><img src='images/BoysFall2017.jpg' height='500'></center>
+
+---
+
+# Runner...
+
+<center><img src='images/2019Marathon.jpeg' height='500'></center>
+
+---
+
+# And photographer.
+
+<center><img src='images/Sleeping_Empire.jpg' height='500'></center>
+
+---
+
+# Your turn
+
+* Name?
+* Program?
+* What statistics courses have you already taken?
+* What do you hope to get from this class?
+* What is something interesting about yourself we would otherwise not know?
+
+---
+
+# Syllabus
+
+Syllabus and course materials are here: [https://epsy887.bryer.org](https://epsy887.bryer.org)
+
+The site is built using the [Blogdown](https://bookdown.org/yihui/blogdown/) R package and hosted on [Github](https://github.com/jbryer/EPSY887Fall2019). Each page of the site has a "Improve this page" link at the bottom right, use that to start a pull request on Github.
+
+
+---
+
+# Course Schedule
+
+.small[
+
+Date    | Topic
+--------|----------------------------------------------------------------
+Aug-29  | [Introduction to R and RStudio](/r/intror/)
+Sep-5   | Data wrangling
+Sep-12  | Data visualization
+Sep-19  | Programming with R
+Sep-26  | Documenting with R: `Rmarkdown`, `blogdown`, `bookdown`
+Oct-3   | Interactive websites with `shiny`
+Oct-10  | The ananytomy of an R package
+Oct-17  | Classification and regression tree (CART) methods
+Oct-24  | Propensity score analysis
+Oct-31  | Advanced propensity score analysis
+Nov-7   | **TBD Possible GoToMeeting class.**
+Nov-14  | Text Analysis
+Nov-21  | **No class meeting** - Video will be posted
+Nov-28  | **No class - Happy Thanksgiving! 🦃**
+Dec-5   | Presentations
+Dec-12  | Presentations / Course wrap-up
+
+]
+
+---
+
+# Assignments
+
+This course is graded as pass/fail. Successful students will attend and participate in the weekly classes as well as contribute to the course wiki. Weekly assignments will be assigned as appropriate. 
+
+* **Participation** (10%) - Participate in class and the Slack discussions.
+* **Labs** (20%) - R Labs will be assigned as appropriate.
+* **Website** (30%) - Students are to create a website using either the `blogdown` or `bookdown` R package.
+* **Presentation** (40%) - The culmination of the course will be a short (20 to 30 minutes) presentation and document outlining the analysis you conducted with your dataset. Students are encouraged to bring their own dataset (e.g. data to be used for a dissertation), but that is not necessary. Many free and public datasets are available for use and will be discussed in the first couple classes.
+
+
+---
+
+# Communication
+
+* Slack Channel: https://epsy887fall2019.slack.com
+* Email: jason.bryer@gmail.com
+* Phone/GoToMeeting: Please email to schedule a time to meet.
+* In person - Email to schedule.
+
+---
+
+# The DATA606 R Package
+
+The package can be installed from Github using the `devtools` package.
+
+```{r, eval=FALSE}
+devtools::install_github('jbryer/DATA606')
+```
+
+Download the `Setup.R` script here: https://github.com/jbryer/EPSY887Fall2019/blob/master/R/Setup.R
+
+---
+
+# Class Structure
+
+Please bring your laptop with R and Rstudio installed. The classes will be structured like workshops where there will be a combination of lecture and activites. 
+
+In the second half of the class I would like to allocate class time to work on your projects you will be presented.
+
+---
+
+# First Lab / Assignment
+
+Install R and Rstudio.
+
+Run the setup script: 
+https://raw.githubusercontent.com/jbryer/EPSY887-Fall2019/master/R/Setup.R
+Complete Lab 1. Use the following commands to get started:
+
+```{r, eval=FALSE}
+DATA606::startLab('Lab1')
+```
+
