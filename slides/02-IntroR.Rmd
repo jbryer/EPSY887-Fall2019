@@ -388,7 +388,7 @@ head(directory)
 * `integer` - whole numbers, either positive or negative (e.g. `2112`, `42`, `-1`)
 * `double` or `numeric` - real number (e.g. `0.05`, `pi`, `-Inf`, `NaN`)
 * `complex` - complex number (e.g. `1i`)
-* `character` - sequence of characters, or a string (e.g. `"Hello NEAIR!"`)
+* `character` - sequence of characters, or a string (e.g. `"Hello EPSY887!"`)
 
 You can use the `class` function to determine the type of an object.
 
@@ -820,7 +820,7 @@ str(ret2)
 
 * `paste` and `paste0` - concatenate strings (`paste0` uses `sep=''` by default)  
 ```{r}
-paste('Hello', 'NEAIR!')
+paste('Hello', 'EPSY887!')
 ```
 * `prettyNum` - Formats numbers to strings  
 ```{r}

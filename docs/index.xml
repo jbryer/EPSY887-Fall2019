@@ -129,23 +129,5 @@ DATA606::startLab(&#39;Lab1&#39;)  Readings  The preface and introduction of R f
    Date Topic Resources     August 29 Introduction to R and RStudio Intro Course Slides, Intro R Slides   September 5 Data wrangling    September 12 Data visualization    September 19 Programming with R    September 26 Documenting with R    October 3 Interactive websites with shiny    October 10 The ananytomy of an R package    October 17 Classification and regression tree (CART) methods    October 24 Propensity score analysis    October 31 Advanced propensity score analysis    November 7 TBD Possible GoToMeeting class.</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>/slides/01-intro_to_course/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/slides/01-intro_to_course/</guid>
-      <description>Intro to R for Academic Researchers   class: center, middle, inverse, title-slide # Intro to R for Academic Researchers ## EPSY 887 - Fall 2019 ### Jason Bryer, Ph.D. ### University at Albany ### 2019-08-29 --- # Agenda * Introductions * Survey * Syllabus * Course schedule * Assignments * Intro to R and RStudio * One minute papers --- # Introduction A little about me: * Currently Executive Director at [Excelsior College](http://excelsior.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/slides/02-intror/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/slides/02-intror/</guid>
-      <description>Introduction to R var SLIDE_CONFIG = { // Slide settings settings: { title: &#39;Introduction to R&#39;, useBuilds: true, usePrettify: true, enableSlideAreas: true, enableTouch: true, }, // Author information presenters: [ { name: &#39;Jason Bryer, Ph.D.&#39; , company: &#39;&#39;, gplus: &#39;&#39;, twitter: &#39;&#39;, www: &#39;&#39;, github: &#39;&#39; }, ] };         b, strong { font-weight: bold; } em { font-style: italic; } summary { display: list-item; } slides  slide { -webkit-transition: all 0.</description>
-    </item>
-    
   </channel>
 </rss>

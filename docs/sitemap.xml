@@ -77,20 +77,7 @@
   </url>
   
   <url>
-    <loc>/slides/01-intro_to_course/</loc>
-  </url>
-  
-  <url>
-    <loc>/slides/02-intror/</loc>
-  </url>
-  
-  <url>
     <loc>/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/slides/</loc>
     <priority>0</priority>
   </url>
   
