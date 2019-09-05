@@ -14,12 +14,28 @@ output:
       countIncrementalSlides: false
 ---
 
+# Data Science Skills
+
+![](images/Data_Science_VD.png)
+
+Conway (2010). http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram
+
+---
+
+# Data Science Workflow
+
+![](images/r4ds_data-science.png)
+
+Wickham & Grolemund (2008)
+
+---
+
 # Setup RStudio Project
 
 1. Click "File" -> "New Project"
 2. Choose "Existing Directory" or "New "Directory", as appropriate.
 3. Create a subdirectory called "data".
-4. Download these R script into the root directory (right click and choose "Save Link As...")  
+4. Download these R scripts into the root directory (right click and choose "Save Link As...")  
 https://raw.githubusercontent.com/jbryer/EPSY887-Fall2019/master/R/mass_analysis.R  
 https://raw.githubusercontent.com/jbryer/EPSY887-Fall2019/master/R/Setup.R
 5. Download the data file into the data directory  
