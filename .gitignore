@@ -1,6 +1,6 @@
 private/
-slides/01-Intro_to_Course_files/
-slides/02-IntroR_files
+/slides/01-Intro_to_Course_files/
+/slides/02-IntroR_files/
 
 # History files
 .Rhistory
