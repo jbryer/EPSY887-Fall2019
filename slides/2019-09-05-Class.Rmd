@@ -19,8 +19,9 @@ output:
 1. Click "File" -> "New Project"
 2. Choose "Existing Directory" or "New "Directory", as appropriate.
 3. Create a subdirectory called "data".
-4. Download the R script into the root directory (right click and choose "Save Link As...")  
-https://raw.githubusercontent.com/jbryer/EPSY887-Fall2019/master/R/mass_analysis.R
+4. Download these R script into the root directory (right click and choose "Save Link As...")  
+https://raw.githubusercontent.com/jbryer/EPSY887-Fall2019/master/R/mass_analysis.R  
+https://raw.githubusercontent.com/jbryer/EPSY887-Fall2019/master/R/Setup.R
 5. Download the data file into the data directory  
 https://github.com/jbryer/EPSY887-Fall2019/raw/master/datasets/MathAnxiety.xlsx
 6. Open the `mass_analysis.R` file
