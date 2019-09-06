@@ -9,7 +9,7 @@ menu: "main"
 Date          | Topic                                              | Resources
 --------------|----------------------------------------------------|------------
 August 29     | [Introduction to R and RStudio](/r/intror/)        | [Intro Course Slides](/slides/01-Intro_to_Course.html), [Intro R Slides](/slides/02-IntroR.html)
-September 5   | Data wrangling                                     | [Slides](/slides/2019-09-05-Class.html), [R Script](https://raw.githubusercontent.com/jbryer/EPSY887-Fall2019/master/R/mass_analysis.R), [Data File](https://github.com/jbryer/EPSY887-Fall2019/raw/master/datasets/MathAnxiety.xlsx)
+September 5   | Data wrangling                                     | [Slides](/slides/2019-09-05-Class.html), [R Script](https://raw.githubusercontent.com/jbryer/EPSY887-Fall2019/master/R/mass_analysis.R), [Data File](https://github.com/jbryer/EPSY887-Fall2019/raw/master/datasets/MathAnxiety.xlsx), [R Script with Answers](https://raw.githubusercontent.com/jbryer/EPSY887-Fall2019/master/R/mass_analysis_answers.R)
 September 12  | Data visualization                                 |
 September 19  | Programming with R                                 |
 September 26  | Documenting with R                                 |
