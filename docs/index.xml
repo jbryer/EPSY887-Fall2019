@@ -126,7 +126,7 @@ DATA606::startLab(&#39;Lab1&#39;)  Readings  The preface and introduction of R f
       
       <guid>https://epsy887.bryer.org/schedule/</guid>
       <description>This schedule is tentative and is subject to changed based upon the interests of the class
-   Date Topic Resources     August 29 Introduction to R and RStudio Intro Course Slides, Intro R Slides   September 5 Data wrangling Slides, R Script, Data File, R Script with Answers   September 12 Data visualization    September 19 Programming with R    September 26 Documenting with R    October 3 Interactive websites with shiny    October 10 The ananytomy of an R package    October 17 Classification and regression tree (CART) methods    October 24 Propensity score analysis    October 31 Advanced propensity score analysis    November 7 TBD Possible GoToMeeting class.</description>
+   Date Topic Resources     August 29 Introduction to R and RStudio Intro Course Slides, Intro R Slides   September 5 Data wrangling Slides, R Script, Data File, R Script with Answers   September 12 Data visualization Slides, R Script, Gapminder Data Files: Countries, Life Expectancy, Population, Income   September 19 Programming with R    September 26 Documenting with R    October 3 Interactive websites with shiny    October 10 The ananytomy of an R package    October 17 Classification and regression tree (CART) methods    October 24 Propensity score analysis    October 31 Advanced propensity score analysis    November 7 TBD Possible GoToMeeting class.</description>
     </item>
     
   </channel>
