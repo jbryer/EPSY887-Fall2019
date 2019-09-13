@@ -33,8 +33,7 @@ names(population)
 names(life_expectancy)[5:ncol(life_expectancy)] <- paste0('le_', 
 							names(life_expectancy)[5:ncol(life_expectancy)])
 names(income)[5:ncol(income)] <- paste0('income_', names(income)[5:ncol(income)])
-names(population)[4:ncol(population)] <- substr(names(population)[4:ncol(population)], 1, 4)
-# names(population)[4:ncol(population)] <- as.character(as.integer(names(population)[4:ncol(population)]))
+names(population)[4:ncol(population)] <- as.character(as.integer(names(population)[4:ncol(population)]))
 names(population)[4:ncol(population)] <- paste0('pop_', 
 							names(population)[4:ncol(population)])
 
@@ -44,20 +43,18 @@ gapminder <- merge(countries,
 				   all.x = TRUE)
 gapminder <- merge(gapminder,
 				   income,
-				   by = 'geo',
+				   by = 'geo', 
 				   all.x = TRUE)
-
 gapminder <- merge(gapminder,
 				   population,
 				   by = 'geo',
 				   all.x = TRUE)
-
 names(gapminder)
 
 # We'll create a variable for the year we want to look at. As we will
 # see later, we can change this variable and create the figure for a different
 # year quickly.
-year <- '2017'
+year <- '2017' 
 
 # Subset the gapminder data.frame to include only the columns we are interested in
 gapminder2 <- gapminder %>%
@@ -70,12 +67,10 @@ gapminder2 <- gapminder %>%
 		   population = paste0('pop_', year),
 		   life_expectancy = paste0('le_', year))
 
-gapminder2 %>% filter(geo == 'usa')
-
 # https://www.gapminder.org/topics/four-income-levels/
-income_levels <- c(2 * 365,
-				   8 * 365,
-				   32 * 365)
+income_levels <- c(2 * 356,
+				   8 * 356,
+				   32 * 356)
 income_levels_df <- data.frame(
 	position = c(0, income_levels),
 	label = c('Level 1', 'Level 2', 'Level 3', 'Level 4')
@@ -83,13 +78,16 @@ income_levels_df <- data.frame(
 
 ##### Build the graphic
 
-ggplot(gapminder2, aes(x = income, 
-					   y = life_expectancy, 
-					   color = four_regions,
-					   size = population)) +
-	geom_vline(data=income_levels_df, aes(xintercept = position)) +
-	geom_text(data=income_levels_df, aes(x=position, label=label), y = 50, color='black', size=4, hjust = -0.1) +
+ggplot(gapminder2, aes(x = income, y = life_expectancy, 
+					   size = population, color = four_regions)) +
+	geom_vline(xintercept = income_levels, alpha = 0.5) +
+	geom_text(data = income_levels_df, aes(x = position, label = label), 
+			   color = 'black', size = 3, y = 50, hjust = -0.1) +
 	geom_point() +
-	scale_x_log10() +
-	theme_light()
+	scale_x_log10(labels = function(x) { prettyNum(x, big.mark=',', scientific=F) }) +
+	scale_color_brewer('Region', type = 'qual', palette = 6) +
+	xlab('Income (GDP per capita, log transformed)') +
+	ylab('Life Expectancy (in years)') +
+	ggtitle('World Health Chart 2017', subtitle = 'Data Source: Gapminder') +
+	theme_minimal()
 
