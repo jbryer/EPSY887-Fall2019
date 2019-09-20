@@ -1,0 +1,676 @@
+---
+title: "Programming with R"
+subtitle: "EPSY 887 - Fall 2019"
+author: "Jason Bryer, Ph.D."
+institute: "University at Albany"
+date: 2019-09-19
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts, my-theme.css]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, messages=FALSE, results='hide'}
+library(ggplot2)
+library(psych)
+library(reshape2)
+library(readxl)
+library(tidyverse)
+library(DATA606)
+
+mass1 <- read_xlsx('../datasets/MathAnxiety.xlsx') # Summer 2014
+mass2 <- read_xlsx('../datasets/MathAnxiety.xlsx', sheet = 2) # Fall 2014
+mass3 <- read_xlsx('../datasets/MathAnxiety.xlsx', sheet = 3) # Summer 2015
+mass4 <- read_xlsx('../datasets/MathAnxiety.xlsx', sheet = 4) # Fall 2019
+items <- c('I find math interesting.',
+		   'I get uptight during math tests.',
+		   'I think that I will use math in the future.',
+		   'Mind goes blank and I am unable to think clearly when doing my math test.',
+		   'Math relates to my life.',
+		   'I worry about my ability to solve math problems.',
+		   'I get a sinking feeling when I try to do math problems.',
+		   'I find math challenging.',
+		   'Mathematics makes me feel nervous.',
+		   'I would like to take more math classes.',
+		   'Mathematics makes me feel uneasy.',
+		   'Math is one of my favorite subjects.',
+		   'I enjoy learning with mathematics.',
+		   'Mathematics makes me feel confused.')
+
+mass1$Term <- 'Summer 2014'
+mass2$Term <- 'Fall 2014'
+mass3$Term <- 'Summer 2015'
+mass4$Term <- 'Fall 2019'
+mass <- rbind(mass1, mass2, mass3, mass4)
+
+set.seed(2112)
+```
+
+
+# if Statements
+
+`if` statements are a way of doing different operations conditionally. In this example, the `sample` function returns either a 0 or 1.
+
+```{r}
+if(sample(c(0,1), 1) > 0.5) {
+	print('heads')
+} else {
+	print('tails')
+}
+```
+
+For simpler problems, the `ifelse` function may be easier.
+
+```{r}
+ifelse(sample(c(0,1), 1) > 0.5, 'heads', 'tails')
+```
+
+---
+
+# for loops
+
+The `for` loop allows you to do some operation a number of times. You define some variable `i` that is set to somve value, then the all the R code within the braces (i.e. `{ }`) will be executed.
+
+```{r}
+for(i in 2:5) {
+	print(i)
+}
+```
+
+---
+
+# Using for loop to recode
+
+In this example, we wish to convert each of the Likert responses in the `mass` data frame to an ordered factor.
+
+```{r}
+for(i in 2:15) {
+	mass[,i] <- factor(mass[,i], levels=1:5, labels=c('Strongly Disagree', 
+			'Disagree', 'Neutral', 'Agree', 'Strongly Agree'), ordered=TRUE)
+}
+str(mass)
+```
+
+---
+
+# The apply functions
+
+There are a number of `Xapply` functions that behave like `for` loops. They perform an operation over some data structure.
+
+* `apply` - Used to execute a function to each row (`MARGIN = 1`) or column (`MARGIN = 2`).
+* `lapply` - Used to execute a function to each element in a list. Returns a list of the same length of what was passed in.
+* `sapply` - Used to execute a function to each element in a list. Returns a vector or array of the same length of what was passed in. This only works if the function executed on each element returns a vector of of the same length for all results.
+* `vapply` - Is similar to sapply, but has a pre-specified type of return value, so it can be safer (and sometimes faster) to use.
+* `tapply` - Apply a function to each cell of a ragged array, that is to each (non-empty) group of values given by a unique combination of the levels of certain factors.
+* `mappy` - Is a multivariate version of sapply. mapply applies FUN to the first elements of each ... argument, the second elements, the third elements, and so on. 
+
+---
+
+# Examples
+
+```{r}
+apply(mass1[,2:15], 2, mean, na.rm = TRUE)
+```
+
+--
+
+```{r}
+x <- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
+```
+
+.pull-left[
+
+```{r}
+lapply(x, mean)
+```
+
+]
+.pull-right[
+
+```{r}
+sapply(x, mean)
+sapply(x, quantile)
+```
+]
+
+---
+
+
+# while loops
+
+`while` loops will run until some condition is met. In this example, consider 1=heads, 0=tails. How many random events would it take before getting 100 heads?
+
+```{r}
+sum <- 0
+count <- 0
+while(sum < 100) {
+	sum <- sum + sample(c(0,1), 1)
+	count <- count + 1
+}
+count # Number of loops until we got 100 head
+```
+
+---
+
+# Functions
+
+Functions allow for organizing common procedures to easily be used later. You can specify any number of parameters with optional default values. The objects created and/or edited within the function are local to the function (i.e . not available to the calling environment). The `return` or `invisible` function is used to return value(s) to the environment calling the function. The `invisible` function will return a value but will not print it to the console if it is not assigned to an object.
+
+```{r}
+getStanding <- function(credits, 
+						breaks=c(30, 60, 90),
+						labels=c('Freshman','Sophomore', 'Junior', 'Senior')) {
+	results <- cut(credits, breaks=c(-Inf, breaks, Inf), labels=labels, 
+				   include.lowest=TRUE, right=FALSE)
+	return(results)
+}
+getStanding(42)
+getStanding(c(27, 60, 101, 200))
+```
+
+---
+
+# The ... Operator
+
+The `...` operator in R (technically an ellipsis, but often referred to as the dots parameter, or dot-dot-dot) allows for flexibility in how parameters are given to R. There are two major ways the `...` parameter is used:
+
+1. To pass parameters to another function without having to explicitly define them.
+2. To have an arbitrary number of parameters for a function.
+
+---
+
+# ... : Passing Parameters
+
+
+```{r, eval=TRUE}
+print_percent <- function(x, multiply = all(x <= 1.0), ...) {
+	if(multiply) {
+		x <- x * 100
+	}
+	x <- round(x, ...)
+	return( paste0(x, '%') )
+}
+```
+
+--
+
+```{r}
+print_percent(.2112)
+```
+
+--
+
+```{r}
+print_percent(.2112, digits = 1)
+```
+
+--
+
+```{r}
+print_percent(c(.4, .01, .05, .2112), digits = 2)
+```
+
+---
+
+# ... : Arbitrary Arugements
+
+
+```{r}
+test_function <- function(..., 
+		  param1, 
+		  param2 = 'Some Default') {
+	dots <- list(...)
+	print('The ... parameters:')
+	print(dots)
+	if(missing(param1)) {
+		print('param1 was not defined')
+	} else {
+		print(paste0('param1 = ', param1))
+	}
+	print(paste0('param2 = ', param2))
+}
+```
+
+
+---
+
+# ... : Arbitrary Arugements (cont)
+
+```{r}
+test_function()
+```
+
+--
+
+```{r}
+test_function(param1 = 2112)
+```
+
+---
+
+# ... : Arbitrary Arugements (cont)
+
+```{r}
+test_function(a = 'a', b = 'b', 'c', param1 = 2112)
+```
+
+---
+
+# Object Oriented Programming in R
+
+Object-oriented programming (OOP) is a way of programming where you define not only the data structure (attributes), but also the operations (actions). Consider a *football*. This is an object that *attributes* (e.g. size, color, shape) and *actions* (e.g. throw, catch, kick).
+
+R has a number of OOP frameworks, however we will only consider the S3 OOP framwork since it is part of base R and you have already encountered it many times. It is an ad hoc OOP framwork in that actions are determined informally. **Generic** functions will dispatch to the class specific function using the class name. Consider the implementation of the `print` function:
+
+```{r}
+print
+```
+
+The `UseMethod` will determine the correct `print` method to call for the specified object. Consider an object where `class(object) <- c('MyClass')`. Calling `print(object)` will first look for a function `print.MyClass`, if that is not found then it will use the `print.default` function.
+
+---
+
+# Inheritance
+
+A key feature of OOP frameworks is inheritance. Using our ball analogy, we could have a *super* class of type *ball*. It can define some features and actions. But we could also create a class *football* that inherits from *ball*, whereby we "inherit" certain attributes and actions, but can override and/or define new ones. 
+
+Consider the shape attribute of ball. We could represent that a simply the diamater since this is common for most balls. However, footballs are oblong and therefore require two diamaters.
+
+A baseball could also inherit from ball, but we would override the *kick* action since that is not defined for baseball. 
+
+---
+
+# OOP Example
+
+```{r, eval=TRUE}
+baseball <- function(...) {
+	ball <- list(...)
+	class(ball) <- c('baseball', 'ball')
+	return(ball)
+}
+
+football <- function(...) {
+	ball <- list(...)
+	class(ball) <- c('football', 'ball')
+	return(ball)
+}
+
+kick <- function(x, ...) {
+	UseMethod("kick")
+}
+
+kick.default <- function(x, ...) {
+	print("Kicking the ball like any other ball!")
+}
+```
+
+---
+
+# OOP Example (cont).
+
+```{r}
+my_baseball <- baseball()
+my_football <- football()
+kick(my_baseball)
+kick(my_football)
+```
+
+---
+
+# OOP Example (cont).
+
+```{r}
+kick.baseball <- function(x, ...) {
+	print("You don't kick baseballs!")
+}
+
+kick(my_baseball)
+kick(my_football)
+```
+
+---
+
+# OOP Example (cont).
+
+```{r}
+kick.football <- function(x, ...) {
+	print("Kicking for field goal, or 1-point conversion?")
+}
+
+kick(my_baseball)
+kick(my_football)
+```
+
+---
+
+# The trouble with tibbles
+
+Consider the `mass` data frame, it has the following class definition: `r class(mass)`. Recall that the `[` operator on data frames is a function that has one important parameter, `drop`. 
+
+.pull-left[
+
+```{r}
+class(mass)
+is.data.frame(mass)
+```
+
+]
+.pull-right[
+
+We will explicitly convert `mass` to a data.frame.
+```{r}
+mass_df <- as.data.frame(mass)
+class(mass_df)
+is.data.frame(mass_df)
+```
+]
+---
+
+# The trouble with tibbles (cont.)
+
+Consider the situation where we wish to retrieve one column:
+
+.pull-left[
+
+```{r}
+mass[,1]
+class(mass[,1])
+```
+]
+
+--
+
+.pull-right[
+
+```{r}
+mass_df[,1]
+class(mass_df[,1])
+```
+
+]
+
+---
+
+# Extended Example: Merging Multiple data.frames
+
+See: https://github.com/jbryer/EPSY887-Fall2019/blob/master/R/merge_all.R
+
+---
+
+# Bootstrapping
+
+* First introduced by Efron (1979) in [*Bootstrap Methods: Another Look at the Jackknife*](https://projecteuclid.org/euclid.aos/1176344552).
+* Estimates confidence of statistics by resampling *with* replacement.
+* The *bootstrap sample* provides an estimate of the sampling distribution.
+* The `boot` R package provides a framework for doing bootstrapping: https://www.statmethods.net/advstats/bootstrapping.html
+
+---
+
+# Bootstrapping Example (Population)
+
+Define our population with a uniform distribution.
+
+```{r}
+n <- 1e5
+pop <- runif(n, 0, 1)
+mean(pop)
+```
+
+```{r, echo=FALSE, fig.width=12,fig.height=5}
+d <- density(pop)
+h <- hist(pop, plot=FALSE)
+hist(pop, main='Population Distribution', xlab="", freq=FALSE, 
+     ylim=c(0, max(d$y, h$density)+.5), col=COL[1,2], border = "white", 
+	 cex.main = 1.5, cex.axis = 1.5, cex.lab = 1.5)
+lines(d, lwd=3)
+```
+
+---
+
+# Bootstrapping Example (Sample)
+
+We observe one random sample from the population.
+
+```{r}
+samp1 <- sample(pop, size = 50)
+```
+
+```{r, echo=FALSE, fig.width=12,fig.height=5}
+d <- density(samp1)
+h <- hist(samp1, plot=FALSE)
+hist(samp1, main='Distribution of Sample', xlab="", freq=FALSE, 
+     ylim=c(0, max(d$y, h$density)+.5), col=COL[1,2], border = "white", 
+	 cex.main = 1.5, cex.axis = 1.5, cex.lab = 1.5)
+lines(d, lwd=3)
+```
+
+---
+
+# Bootstrapping Example (Estimate)
+
+```{r}
+boot.samples <- numeric(1000) # 1,000 bootstrap samples
+for(i in seq_along(boot.samples)) { 
+	tmp <- sample(samp1, size = length(samp1), replace = TRUE)
+	boot.samples[i] <- mean(tmp)
+}
+head(boot.samples)
+```
+
+---
+
+# Bootstrapping Example (Distribution)
+
+```{r, fig.width=12,fig.height=5}
+d <- density(boot.samples)
+h <- hist(boot.samples, plot=FALSE)
+hist(boot.samples, main='Bootstrap Distribution', xlab="", freq=FALSE, 
+     ylim=c(0, max(d$y, h$density)+.5), col=COL[1,2], border = "white", 
+	 cex.main = 1.5, cex.axis = 1.5, cex.lab = 1.5)
+lines(d, lwd=3)
+```
+
+---
+
+# 95% confidence interval
+
+```{r}
+c(mean(boot.samples) - 1.96 * sd(boot.samples), 
+  mean(boot.samples) + 1.96 * sd(boot.samples))
+```
+
+---
+
+# Bootstrapping is not just for means!
+
+```{r}
+boot.samples.median <- numeric(1000) # 1,000 bootstrap samples
+for(i in seq_along(boot.samples.median)) { 
+	tmp <- sample(samp1, size = length(samp1), replace = TRUE)
+	# NOTICE WE ARE NOW USING THE median FUNCTION!
+	boot.samples.median[i] <- median(tmp) 
+}
+head(boot.samples.median)
+```
+
+95% confidence interval for the median
+
+```{r}
+c(mean(boot.samples.median) - 1.96 * sd(boot.samples.median), 
+  mean(boot.samples.median) + 1.96 * sd(boot.samples.median))
+```
+
+---
+
+# Your Turn: Create a Boostrap Function
+
+The following R code should run successfully:
+
+```{r, eval = FALSE}
+# Setup our data
+n <- 1e5
+pop <- runif(n, 0, 1)
+samp1 <- sample(pop, size = 50)
+
+# Create an object that did the bootstrap samples	
+boot1 <- bootstrap(samp1)
+class(boot1) # Verify the class is "bootstrap"
+# Call some S3 generic functions
+print(boot1)
+print(boot1, ci = 0.95)
+summary(boot1)
+summary(boot1, median)
+summary(boot1, sd)
+plot(boot1)
+plot(boot1, metric = median)
+```
+
+---
+
+# Define the required functions
+
+Write the function that will create our object, and define our class (use `bootstrap` as the class name). The function will need (at least) two parameters: `x` which will be the sample from which the bootstrap distribution will be estimated, and `n.boot.samples` which defines the number of bootstrap samples to generate. You can optionally include the `...` parameter, but we won't use it here.
+
+--
+
+```{r, eval = FALSE}
+bootstrap <- function(x, n.boot.samples = 1000, ...) {
+	boot <- list()
+	# Need to so some work here...
+	class(boot) <- 'bootstrap'
+	return(boot)
+}
+```
+
+--
+
+Define S3 functions/methods for `print`, `summary`, and `plot`:
+
+--
+
+```{r, eval = FALSE}
+print.bootstrap <- function(x, ...) { 
+}
+
+summary.bootstrap <- function(x, ...) {
+}
+
+plot.bootstrap <- function(x, ...) {
+}
+```
+
+---
+
+# Bootstrap Function
+
+Implement the `bootstrap` function such that it creates a `list` with two elements:
+* `samples` - a list of length `n.boot.samples` where each element is a bootstrap sample (i.e. a vector with length equal to `length(x)`).
+* `sample` - the value of `x`.
+
+--
+
+```{r}
+bootstrap <- function(x, 
+					  n.boot.samples = 1000,
+					  ...) {
+	bootstrap <- list()
+	bootstrap$samples <- list()
+	for(i in seq_len(n.boot.samples)) { 
+		bootstrap$samples[[i]] <- sample(x, size = length(x), replace = TRUE)
+	}
+	bootstrap$sample <- x
+	class(bootstrap) <- 'bootstrap'
+	return(bootstrap)
+}
+```
+
+---
+
+# Summary Function
+
+Implement the `summary` function so that it returns the bootstrap value. The user should be able to define what metric to use (e.g. `mean`, `median`, `sd`, etc.)
+
+--
+
+```{r}
+summary.bootstrap <- function(x, metric = mean, ...) {
+	boot_dist <- sapply(x$samples, metric, ...)
+	return(mean(boot_dist))
+}
+```
+
+---
+
+# Print Function
+
+Implement the `print` function so that it prints the following information to the console: (1) the number of bootstrap samples, (2) the bootstrap value, and (3) a confidence interval.
+
+--
+
+```{r}
+print.bootstrap <- function(x, metric = mean, ci, ...) {
+	boot_dist <- sapply(x$samples, metric, ...)
+	value <- mean(boot_dist)
+	value.sd <- sd(boot_dist)
+	ci.str <- ''
+	if(!missing(ci)) {
+		cv <- abs(qnorm((1 - ci) / 2))
+		ci.str <- paste0(' (', round(ci * 100), '% confidence interval: ',
+						 round(value - cv * value.sd, digits = 2), ', ', 
+						 round(value + cv * value.sd, digits = 2), ')')
+	}
+	print(paste0('Bootstrap value of ', round(value, digits = 2), ci.str,
+			 ' was obtained from a bootstrap distribution (n = ', length(x$samples), 
+			 ') of an original sample of ', length(x$sample), ' observations.'))
+}
+```
+
+---
+
+# Plot Function
+
+Implement the `plot` function so that it plots a histogram of the bootstrap distributions.
+
+--
+
+```{r}
+plot.bootstrap <- function(x, metric = mean, ...) {
+	boot_dist <- sapply(x$samples, metric, ...)
+	d <- density(boot_dist)
+	h <- hist(boot_dist, plot=FALSE)
+	hist(boot_dist, main='Bootstrap Distribution', xlab="", freq=FALSE, 
+		 ylim=c(0, max(d$y, h$density)+.5), col='#569BBDC0', border = "white", 
+		 cex.main = 1.5, cex.axis = 1.5, cex.lab = 1.5)
+	lines(d, lwd=3)
+}
+```
+
+---
+
+# Putting it all together
+
+```{r}
+boot1 <- bootstrap(samp1)
+class(boot1) # Verify the class is "bootstrap"
+print(boot1)
+print(boot1, ci = 0.95)
+summary(boot1)
+summary(boot1, median)
+```
+
+---
+
+```{r, fig.width = 10, fig.heigth = 3}
+plot(boot1)
+```
+
+---
+
+```{r, fig.width = 10, fig.heigth = 3}
+plot(boot1, metric = median)
+```
+

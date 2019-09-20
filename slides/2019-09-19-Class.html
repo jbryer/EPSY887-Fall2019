@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Programming with R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jason Bryer, Ph.D." />
+    <meta name="date" content="2019-09-19" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my-theme.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Programming with R
+## EPSY 887 - Fall 2019
+### Jason Bryer, Ph.D.
+### University at Albany
+### 2019-09-19
+
+---
+
+
+
+
+
+# if Statements
+
+`if` statements are a way of doing different operations conditionally. In this example, the `sample` function returns either a 0 or 1.
+
+
+```r
+if(sample(c(0,1), 1) &gt; 0.5) {
+	print('heads')
+} else {
+	print('tails')
+}
+```
+
+```
+## [1] "heads"
+```
+
+For simpler problems, the `ifelse` function may be easier.
+
+
+```r
+ifelse(sample(c(0,1), 1) &gt; 0.5, 'heads', 'tails')
+```
+
+```
+## [1] "heads"
+```
+
+---
+
+# for loops
+
+The `for` loop allows you to do some operation a number of times. You define some variable `i` that is set to somve value, then the all the R code within the braces (i.e. `{ }`) will be executed.
+
+
+```r
+for(i in 2:5) {
+	print(i)
+}
+```
+
+```
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5
+```
+
+---
+
+# Using for loop to recode
+
+In this example, we wish to convert each of the Likert responses in the `mass` data frame to an ordered factor.
+
+
+```r
+for(i in 2:15) {
+	mass[,i] &lt;- factor(mass[,i], levels=1:5, labels=c('Strongly Disagree', 
+			'Disagree', 'Neutral', 'Agree', 'Strongly Agree'), ordered=TRUE)
+}
+str(mass)
+```
+
+```
+## Classes 'tbl_df', 'tbl' and 'data.frame':	75 obs. of  16 variables:
+##  $ Gender: chr  "Female" "Female" "Male" "Female" ...
+##  $ q1    : Ord.factor w/ 5 levels "Strongly Disagree"&lt;..: NA NA NA NA NA NA NA NA NA NA ...
+##  $ q2    : Ord.factor w/ 5 levels "Strongly Disagree"&lt;..: NA NA NA NA NA NA NA NA NA NA ...
+##  $ q3    : Ord.factor w/ 5 levels "Strongly Disagree"&lt;..: NA NA NA NA NA NA NA NA NA NA ...
+##  $ q4    : Ord.factor w/ 5 levels "Strongly Disagree"&lt;..: NA NA NA NA NA NA NA NA NA NA ...
+##  $ q5    : Ord.factor w/ 5 levels "Strongly Disagree"&lt;..: NA NA NA NA NA NA NA NA NA NA ...
+##  $ q6    : Ord.factor w/ 5 levels "Strongly Disagree"&lt;..: NA NA NA NA NA NA NA NA NA NA ...
+##  $ q7    : Ord.factor w/ 5 levels "Strongly Disagree"&lt;..: NA NA NA NA NA NA NA NA NA NA ...
+##  $ q8    : Ord.factor w/ 5 levels "Strongly Disagree"&lt;..: NA NA NA NA NA NA NA NA NA NA ...
+##  $ q9    : Ord.factor w/ 5 levels "Strongly Disagree"&lt;..: NA NA NA NA NA NA NA NA NA NA ...
+##  $ q10   : Ord.factor w/ 5 levels "Strongly Disagree"&lt;..: NA NA NA NA NA NA NA NA NA NA ...
+##  $ q11   : Ord.factor w/ 5 levels "Strongly Disagree"&lt;..: NA NA NA NA NA NA NA NA NA NA ...
+##  $ q12   : Ord.factor w/ 5 levels "Strongly Disagree"&lt;..: NA NA NA NA NA NA NA NA NA NA ...
+##  $ q13   : Ord.factor w/ 5 levels "Strongly Disagree"&lt;..: NA NA NA NA NA NA NA NA NA NA ...
+##  $ q14   : Ord.factor w/ 5 levels "Strongly Disagree"&lt;..: NA NA NA NA NA NA NA NA NA NA ...
+##  $ Term  : chr  "Summer 2014" "Summer 2014" "Summer 2014" "Summer 2014" ...
+```
+
+---
+
+# The apply functions
+
+There are a number of `Xapply` functions that behave like `for` loops. They perform an operation over some data structure.
+
+* `apply` - Used to execute a function to each row (`MARGIN = 1`) or column (`MARGIN = 2`).
+* `lapply` - Used to execute a function to each element in a list. Returns a list of the same length of what was passed in.
+* `sapply` - Used to execute a function to each element in a list. Returns a vector or array of the same length of what was passed in. This only works if the function executed on each element returns a vector of of the same length for all results.
+* `vapply` - Is similar to sapply, but has a pre-specified type of return value, so it can be safer (and sometimes faster) to use.
+* `tapply` - Apply a function to each cell of a ragged array, that is to each (non-empty) group of values given by a unique combination of the levels of certain factors.
+* `mappy` - Is a multivariate version of sapply. mapply applies FUN to the first elements of each ... argument, the second elements, the third elements, and so on. 
+
+---
+
+# Examples
+
+
+```r
+apply(mass1[,2:15], 2, mean, na.rm = TRUE)
+```
+
+```
+##   q1   q2   q3   q4   q5   q6   q7   q8   q9  q10  q11  q12  q13  q14 
+## 3.60 3.35 4.35 2.50 3.60 2.90 2.65 3.75 2.90 2.65 2.90 2.45 2.85 3.15
+```
+
+--
+
+
+```r
+x &lt;- list(a = 1:10, beta = exp(-3:3), logic = c(TRUE,FALSE,FALSE,TRUE))
+```
+
+.pull-left[
+
+
+```r
+lapply(x, mean)
+```
+
+```
+## $a
+## [1] 5.5
+## 
+## $beta
+## [1] 4.535125
+## 
+## $logic
+## [1] 0.5
+```
+
+]
+.pull-right[
+
+
+```r
+sapply(x, mean)
+```
+
+```
+##        a     beta    logic 
+## 5.500000 4.535125 0.500000
+```
+
+```r
+sapply(x, quantile)
+```
+
+```
+##          a        beta logic
+## 0%    1.00  0.04978707   0.0
+## 25%   3.25  0.25160736   0.0
+## 50%   5.50  1.00000000   0.5
+## 75%   7.75  5.05366896   1.0
+## 100% 10.00 20.08553692   1.0
+```
+]
+
+---
+
+
+# while loops
+
+`while` loops will run until some condition is met. In this example, consider 1=heads, 0=tails. How many random events would it take before getting 100 heads?
+
+
+```r
+sum &lt;- 0
+count &lt;- 0
+while(sum &lt; 100) {
+	sum &lt;- sum + sample(c(0,1), 1)
+	count &lt;- count + 1
+}
+count # Number of loops until we got 100 head
+```
+
+```
+## [1] 191
+```
+
+---
+
+# Functions
+
+Functions allow for organizing common procedures to easily be used later. You can specify any number of parameters with optional default values. The objects created and/or edited within the function are local to the function (i.e . not available to the calling environment). The `return` or `invisible` function is used to return value(s) to the environment calling the function. The `invisible` function will return a value but will not print it to the console if it is not assigned to an object.
+
+
+```r
+getStanding &lt;- function(credits, 
+						breaks=c(30, 60, 90),
+						labels=c('Freshman','Sophomore', 'Junior', 'Senior')) {
+	results &lt;- cut(credits, breaks=c(-Inf, breaks, Inf), labels=labels, 
+				   include.lowest=TRUE, right=FALSE)
+	return(results)
+}
+getStanding(42)
+```
+
+```
+## [1] Sophomore
+## Levels: Freshman Sophomore Junior Senior
+```
+
+```r
+getStanding(c(27, 60, 101, 200))
+```
+
+```
+## [1] Freshman Junior   Senior   Senior  
+## Levels: Freshman Sophomore Junior Senior
+```
+
+---
+
+# The ... Operator
+
+The `...` operator in R (technically an ellipsis, but often referred to as the dots parameter, or dot-dot-dot) allows for flexibility in how parameters are given to R. There are two major ways the `...` parameter is used:
+
+1. To pass parameters to another function without having to explicitly define them.
+2. To have an arbitrary number of parameters for a function.
+
+---
+
+# ... : Passing Parameters
+
+
+
+```r
+print_percent &lt;- function(x, multiply = all(x &lt;= 1.0), ...) {
+	if(multiply) {
+		x &lt;- x * 100
+	}
+	x &lt;- round(x, ...)
+	return( paste0(x, '%') )
+}
+```
+
+--
+
+
+```r
+print_percent(.2112)
+```
+
+```
+## [1] "21%"
+```
+
+--
+
+
+```r
+print_percent(.2112, digits = 1)
+```
+
+```
+## [1] "21.1%"
+```
+
+--
+
+
+```r
+print_percent(c(.4, .01, .05, .2112), digits = 2)
+```
+
+```
+## [1] "40%"    "1%"     "5%"     "21.12%"
+```
+
+---
+
+# ... : Arbitrary Arugements
+
+
+
+```r
+test_function &lt;- function(..., 
+		  param1, 
+		  param2 = 'Some Default') {
+	dots &lt;- list(...)
+	print('The ... parameters:')
+	print(dots)
+	if(missing(param1)) {
+		print('param1 was not defined')
+	} else {
+		print(paste0('param1 = ', param1))
+	}
+	print(paste0('param2 = ', param2))
+}
+```
+
+
+---
+
+# ... : Arbitrary Arugements (cont)
+
+
+```r
+test_function()
+```
+
+```
+## [1] "The ... parameters:"
+## list()
+## [1] "param1 was not defined"
+## [1] "param2 = Some Default"
+```
+
+--
+
+
+```r
+test_function(param1 = 2112)
+```
+
+```
+## [1] "The ... parameters:"
+## list()
+## [1] "param1 = 2112"
+## [1] "param2 = Some Default"
+```
+
+---
+
+# ... : Arbitrary Arugements (cont)
+
+
+```r
+test_function(a = 'a', b = 'b', 'c', param1 = 2112)
+```
+
+```
+## [1] "The ... parameters:"
+## $a
+## [1] "a"
+## 
+## $b
+## [1] "b"
+## 
+## [[3]]
+## [1] "c"
+## 
+## [1] "param1 = 2112"
+## [1] "param2 = Some Default"
+```
+
+---
+
+# Object Oriented Programming in R
+
+Object-oriented programming (OOP) is a way of programming where you define not only the data structure (attributes), but also the operations (actions). Consider a *football*. This is an object that *attributes* (e.g. size, color, shape) and *actions* (e.g. throw, catch, kick).
+
+R has a number of OOP frameworks, however we will only consider the S3 OOP framwork since it is part of base R and you have already encountered it many times. It is an ad hoc OOP framwork in that actions are determined informally. **Generic** functions will dispatch to the class specific function using the class name. Consider the implementation of the `print` function:
+
+
+```r
+print
+```
+
+```
+## function (x, ...) 
+## UseMethod("print")
+## &lt;bytecode: 0x7f9f768bbbb0&gt;
+## &lt;environment: namespace:base&gt;
+```
+
+The `UseMethod` will determine the correct `print` method to call for the specified object. Consider an object where `class(object) &lt;- c('MyClass')`. Calling `print(object)` will first look for a function `print.MyClass`, if that is not found then it will use the `print.default` function.
+
+---
+
+# Inheritance
+
+A key feature of OOP frameworks is inheritance. Using our ball analogy, we could have a *super* class of type *ball*. It can define some features and actions. But we could also create a class *football* that inherits from *ball*, whereby we "inherit" certain attributes and actions, but can override and/or define new ones. 
+
+Consider the shape attribute of ball. We could represent that a simply the diamater since this is common for most balls. However, footballs are oblong and therefore require two diamaters.
+
+A baseball could also inherit from ball, but we would override the *kick* action since that is not defined for baseball. 
+
+---
+
+# OOP Example
+
+
+```r
+baseball &lt;- function(...) {
+	ball &lt;- list(...)
+	class(ball) &lt;- c('baseball', 'ball')
+	return(ball)
+}
+
+football &lt;- function(...) {
+	ball &lt;- list(...)
+	class(ball) &lt;- c('football', 'ball')
+	return(ball)
+}
+
+kick &lt;- function(x, ...) {
+	UseMethod("kick")
+}
+
+kick.default &lt;- function(x, ...) {
+	print("Kicking the ball like any other ball!")
+}
+```
+
+---
+
+# OOP Example (cont).
+
+
+```r
+my_baseball &lt;- baseball()
+my_football &lt;- football()
+kick(my_baseball)
+```
+
+```
+## [1] "Kicking the ball like any other ball!"
+```
+
+```r
+kick(my_football)
+```
+
+```
+## [1] "Kicking the ball like any other ball!"
+```
+
+---
+
+# OOP Example (cont).
+
+
+```r
+kick.baseball &lt;- function(x, ...) {
+	print("You don't kick baseballs!")
+}
+
+kick(my_baseball)
+```
+
+```
+## [1] "You don't kick baseballs!"
+```
+
+```r
+kick(my_football)
+```
+
+```
+## [1] "Kicking the ball like any other ball!"
+```
+
+---
+
+# OOP Example (cont).
+
+
+```r
+kick.football &lt;- function(x, ...) {
+	print("Kicking for field goal, or 1-point conversion?")
+}
+
+kick(my_baseball)
+```
+
+```
+## [1] "You don't kick baseballs!"
+```
+
+```r
+kick(my_football)
+```
+
+```
+## [1] "Kicking for field goal, or 1-point conversion?"
+```
+
+---
+
+# The trouble with tibbles
+
+Consider the `mass` data frame, it has the following class definition: tbl_df, tbl, data.frame. Recall that the `[` operator on data frames is a function that has one important parameter, `drop`. 
+
+.pull-left[
+
+
+```r
+class(mass)
+```
+
+```
+## [1] "tbl_df"     "tbl"        "data.frame"
+```
+
+```r
+is.data.frame(mass)
+```
+
+```
+## [1] TRUE
+```
+
+]
+.pull-right[
+
+We will explicitly convert `mass` to a data.frame.
+
+```r
+mass_df &lt;- as.data.frame(mass)
+class(mass_df)
+```
+
+```
+## [1] "data.frame"
+```
+
+```r
+is.data.frame(mass_df)
+```
+
+```
+## [1] TRUE
+```
+]
+---
+
+# The trouble with tibbles (cont.)
+
+Consider the situation where we wish to retrieve one column:
+
+.pull-left[
+
+
+```r
+mass[,1]
+```
+
+```
+## # A tibble: 75 x 1
+##    Gender
+##    &lt;chr&gt; 
+##  1 Female
+##  2 Female
+##  3 Male  
+##  4 Female
+##  5 Female
+##  6 Female
+##  7 Female
+##  8 Female
+##  9 Female
+## 10 Female
+## # … with 65 more rows
+```
+
+```r
+class(mass[,1])
+```
+
+```
+## [1] "tbl_df"     "tbl"        "data.frame"
+```
+]
+
+--
+
+.pull-right[
+
+
+```r
+mass_df[,1]
+```
+
+```
+##  [1] "Female" "Female" "Male"   "Female" "Female" "Female" "Female"
+##  [8] "Female" "Female" "Female" "Female" "Female" "Male"   "Female"
+## [15] "Male"   "Female" "Male"   "Male"   "Female" "Male"   "Female"
+## [22] "Female" "Male"   "Female" "Female" "Female" "Female" "Female"
+## [29] "Female" "Female" "Male"   "Male"   "Male"   "Male"   "Female"
+## [36] "Female" "Female" "Male"   "Female" "Female" "Female" "Female"
+## [43] "Female" "Female" "Female" "Female" "Female" "Female" "Male"  
+## [50] "Female" "Female" "Female" "Female" "Female" "Female" "Female"
+## [57] "Female" "Male"   "Male"   "Female" "Female" "Female" "Female"
+## [64] "Female" "Female" "Female" "Female" "Male"   "Female" "Female"
+## [71] "Female" "Female" "Female" "Female" "Male"
+```
+
+```r
+class(mass_df[,1])
+```
+
+```
+## [1] "character"
+```
+
+]
+
+---
+
+# Extended Example: Merging Multiple data.frames
+
+See: https://github.com/jbryer/EPSY887-Fall2019/blob/master/R/merge_all.R
+
+---
+
+# Bootstrapping
+
+* First introduced by Efron (1979) in [*Bootstrap Methods: Another Look at the Jackknife*](https://projecteuclid.org/euclid.aos/1176344552).
+* Estimates confidence of statistics by resampling *with* replacement.
+* The *bootstrap sample* provides an estimate of the sampling distribution.
+* The `boot` R package provides a framework for doing bootstrapping: https://www.statmethods.net/advstats/bootstrapping.html
+
+---
+
+# Bootstrapping Example (Population)
+
+Define our population with a uniform distribution.
+
+
+```r
+n &lt;- 1e5
+pop &lt;- runif(n, 0, 1)
+mean(pop)
+```
+
+```
+## [1] 0.5008973
+```
+
+![](2019-09-19-Class_files/figure-html/unnamed-chunk-30-1.png)&lt;!-- --&gt;
+
+---
+
+# Bootstrapping Example (Sample)
+
+We observe one random sample from the population.
+
+
+```r
+samp1 &lt;- sample(pop, size = 50)
+```
+
+![](2019-09-19-Class_files/figure-html/unnamed-chunk-32-1.png)&lt;!-- --&gt;
+
+---
+
+# Bootstrapping Example (Estimate)
+
+
+```r
+boot.samples &lt;- numeric(1000) # 1,000 bootstrap samples
+for(i in seq_along(boot.samples)) { 
+	tmp &lt;- sample(samp1, size = length(samp1), replace = TRUE)
+	boot.samples[i] &lt;- mean(tmp)
+}
+head(boot.samples)
+```
+
+```
+## [1] 0.5521028 0.5129548 0.5413835 0.5011787 0.5695299 0.5660828
+```
+
+---
+
+# Bootstrapping Example (Distribution)
+
+
+```r
+d &lt;- density(boot.samples)
+h &lt;- hist(boot.samples, plot=FALSE)
+hist(boot.samples, main='Bootstrap Distribution', xlab="", freq=FALSE, 
+     ylim=c(0, max(d$y, h$density)+.5), col=COL[1,2], border = "white", 
+	 cex.main = 1.5, cex.axis = 1.5, cex.lab = 1.5)
+lines(d, lwd=3)
+```
+
+![](2019-09-19-Class_files/figure-html/unnamed-chunk-34-1.png)&lt;!-- --&gt;
+
+---
+
+# 95% confidence interval
+
+
+```r
+c(mean(boot.samples) - 1.96 * sd(boot.samples), 
+  mean(boot.samples) + 1.96 * sd(boot.samples))
+```
+
+```
+## [1] 0.4643934 0.6211700
+```
+
+---
+
+# Bootstrapping is not just for means!
+
+
+```r
+boot.samples.median &lt;- numeric(1000) # 1,000 bootstrap samples
+for(i in seq_along(boot.samples.median)) { 
+	tmp &lt;- sample(samp1, size = length(samp1), replace = TRUE)
+	# NOTICE WE ARE NOW USING THE median FUNCTION!
+	boot.samples.median[i] &lt;- median(tmp) 
+}
+head(boot.samples.median)
+```
+
+```
+## [1] 0.6431739 0.5998054 0.4876384 0.5642982 0.5740293 0.5740293
+```
+
+95% confidence interval for the median
+
+
+```r
+c(mean(boot.samples.median) - 1.96 * sd(boot.samples.median), 
+  mean(boot.samples.median) + 1.96 * sd(boot.samples.median))
+```
+
+```
+## [1] 0.4751294 0.6726717
+```
+
+---
+
+# Your Turn: Create a Boostrap Function
+
+The following R code should run successfully:
+
+
+```r
+# Setup our data
+n &lt;- 1e5
+pop &lt;- runif(n, 0, 1)
+samp1 &lt;- sample(pop, size = 50)
+
+# Create an object that did the bootstrap samples	
+boot1 &lt;- bootstrap(samp1)
+class(boot1) # Verify the class is "bootstrap"
+# Call some S3 generic functions
+print(boot1)
+print(boot1, ci = 0.95)
+summary(boot1)
+summary(boot1, median)
+summary(boot1, sd)
+plot(boot1)
+plot(boot1, metric = median)
+```
+
+---
+
+# Define the required functions
+
+Write the function that will create our object, and define our class (use `bootstrap` as the class name). The function will need (at least) two parameters: `x` which will be the sample from which the bootstrap distribution will be estimated, and `n.boot.samples` which defines the number of bootstrap samples to generate. You can optionally include the `...` parameter, but we won't use it here.
+
+--
+
+
+```r
+bootstrap &lt;- function(x, n.boot.samples = 1000, ...) {
+	boot &lt;- list()
+	# Need to so some work here...
+	class(boot) &lt;- 'bootstrap'
+	return(boot)
+}
+```
+
+--
+
+Define S3 functions/methods for `print`, `summary`, and `plot`:
+
+--
+
+
+```r
+print.bootstrap &lt;- function(x, ...) { 
+}
+
+summary.bootstrap &lt;- function(x, ...) {
+}
+
+plot.bootstrap &lt;- function(x, ...) {
+}
+```
+
+---
+
+# Bootstrap Function
+
+Implement the `bootstrap` function such that it creates a `list` with two elements:
+* `samples` - a list of length `n.boot.samples` where each element is a bootstrap sample (i.e. a vector with length equal to `length(x)`).
+* `sample` - the value of `x`.
+
+--
+
+
+```r
+bootstrap &lt;- function(x, 
+					  n.boot.samples = 1000,
+					  ...) {
+	bootstrap &lt;- list()
+	bootstrap$samples &lt;- list()
+	for(i in seq_len(n.boot.samples)) { 
+		bootstrap$samples[[i]] &lt;- sample(x, size = length(x), replace = TRUE)
+	}
+	bootstrap$sample &lt;- x
+	class(bootstrap) &lt;- 'bootstrap'
+	return(bootstrap)
+}
+```
+
+---
+
+# Summary Function
+
+Implement the `summary` function so that it returns the bootstrap value. The user should be able to define what metric to use (e.g. `mean`, `median`, `sd`, etc.)
+
+--
+
+
+```r
+summary.bootstrap &lt;- function(x, metric = mean, ...) {
+	boot_dist &lt;- sapply(x$samples, metric, ...)
+	return(mean(boot_dist))
+}
+```
+
+---
+
+# Print Function
+
+Implement the `print` function so that it prints the following information to the console: (1) the number of bootstrap samples, (2) the bootstrap value, and (3) a confidence interval.
+
+--
+
+
+```r
+print.bootstrap &lt;- function(x, metric = mean, ci, ...) {
+	boot_dist &lt;- sapply(x$samples, metric, ...)
+	value &lt;- mean(boot_dist)
+	value.sd &lt;- sd(boot_dist)
+	ci.str &lt;- ''
+	if(!missing(ci)) {
+		cv &lt;- abs(qnorm((1 - ci) / 2))
+		ci.str &lt;- paste0(' (', round(ci * 100), '% confidence interval: ',
+						 round(value - cv * value.sd, digits = 2), ', ', 
+						 round(value + cv * value.sd, digits = 2), ')')
+	}
+	print(paste0('Bootstrap value of ', round(value, digits = 2), ci.str,
+			 ' was obtained from a bootstrap distribution (n = ', length(x$samples), 
+			 ') of an original sample of ', length(x$sample), ' observations.'))
+}
+```
+
+---
+
+# Plot Function
+
+Implement the `plot` function so that it plots a histogram of the bootstrap distributions.
+
+--
+
+
+```r
+plot.bootstrap &lt;- function(x, metric = mean, ...) {
+	boot_dist &lt;- sapply(x$samples, metric, ...)
+	d &lt;- density(boot_dist)
+	h &lt;- hist(boot_dist, plot=FALSE)
+	hist(boot_dist, main='Bootstrap Distribution', xlab="", freq=FALSE, 
+		 ylim=c(0, max(d$y, h$density)+.5), col='#569BBDC0', border = "white", 
+		 cex.main = 1.5, cex.axis = 1.5, cex.lab = 1.5)
+	lines(d, lwd=3)
+}
+```
+
+---
+
+# Putting it all together
+
+
+```r
+boot1 &lt;- bootstrap(samp1)
+class(boot1) # Verify the class is "bootstrap"
+```
+
+```
+## [1] "bootstrap"
+```
+
+```r
+print(boot1)
+```
+
+```
+## [1] "Bootstrap value of 0.54 was obtained from a bootstrap distribution (n = 1000) of an original sample of 50 observations."
+```
+
+```r
+print(boot1, ci = 0.95)
+```
+
+```
+## [1] "Bootstrap value of 0.54 (95% confidence interval: 0.47, 0.62) was obtained from a bootstrap distribution (n = 1000) of an original sample of 50 observations."
+```
+
+```r
+summary(boot1)
+```
+
+```
+## [1] 0.5439282
+```
+
+```r
+summary(boot1, median)
+```
+
+```
+## [1] 0.5737131
+```
+
+---
+
+
+```r
+plot(boot1)
+```
+
+![](2019-09-19-Class_files/figure-html/unnamed-chunk-46-1.png)&lt;!-- --&gt;
+
+---
+
+
+```r
+plot(boot1, metric = median)
+```
+
+![](2019-09-19-Class_files/figure-html/unnamed-chunk-47-1.png)&lt;!-- --&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
