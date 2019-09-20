@@ -58,5 +58,7 @@ if(FALSE) { # To test the function
 	merge_all(students, coursework, treatment, by = 'ID', all = TRUE)
 	
 	treatment <- treatment %>% rename(STUDENT_ID = ID)
+	merge_all(students, coursework, treatment, all = TRUE)
+	
 	merge_all(students, coursework, treatment, by = c('ID', 'ID', 'STUDENT_ID'), all = TRUE)
 }
