@@ -16,7 +16,7 @@ September 19  | Programming with R                                 | [Slides](/s
 September 26  | Documenting with R                                 | [Slides](/slides/2019-09-26-Class.html)
 October 3     | Working Session                                    |
 October 10    | Intro to Predictive Modeling and CART Methods      | [Slides](/slides/IntroPredictiveModeling.html)
-October 17    | Handling Missing Data in R                         |
+October 17    | Handling Missing Data in R                         | [Slides](/slides/MissingData.html)
 October 24    | Intro to Propensity Score Analysis                 |
 October 31    | TBD                                                |
 November 7    | **No class meeting**                               |

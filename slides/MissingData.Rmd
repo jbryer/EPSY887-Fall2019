@@ -84,12 +84,12 @@ Allison, T. & Chichetti, D. (1976). [Sleep in mammals: ecological and constituti
 
 * <font size='3'>`BodyWgt` - Body weight in kilograms</font>
 * <font size='3'>`BrainWgt` - Brain weight in grams</font>
-* <font size='3'>`NonD` - Nondreaming sleep (hours / day)</font>
+* <font size='3'>`NonD` - Non-dreaming sleep (hours / day)</font>
 * <font size='3'>`Dream` - Dreaming sleep (hours / day)</font>
 * <font size='3'>`Sleep` - Total sleep</font>
 * <font size='3'>`Span` - Life-span in years</font>
 * <font size='3'>`Gest` - Gestation time in days</font>
-* <font size='3'>`Pred` - Predation index: 1 = minimum (least likely to be preyed upon) to 5 = maximum (most likely to be preyed upon)</font>
+* <font size='3'>`Pred` - Prediction index: 1 = minimum (least likely to be preyed upon) to 5 = maximum (most likely to be preyed upon)</font>
 * <font size='3'>`Exp` - Sleep exposure index: 1 = least exposed (e.g. animal sleeps in a well-protected den) to 5 = most exposed</font>
 * <font size='3'>`Danger` - Overall danger index (based on the above two indices and other information): 1 = least danger (from other animals) to 5 = most danger (from other animals)</font>
 
@@ -196,7 +196,7 @@ cor(y)
 cor(sleep, y, use='pairwise.complete.obs')
 ```
 
-Rows are observed variables, columns missing indicators. Nondreaming (`NonD`) sleep scores are more likely to be missing with larger body weights (`BodyWgt`) with r=0.227. Since the correlations are not very large suggests that the nature of the missingness deviates minimally from the MCAR and MAR assumptions.
+Rows are observed variables, columns missing indicators. Non-dreaming (`NonD`) sleep scores are more likely to be missing with larger body weights (`BodyWgt`) with r=0.227. Since the correlations are not very large suggests that the nature of the missingness deviates minimally from the MCAR and MAR assumptions.
 
 
 
@@ -212,7 +212,7 @@ Kabacoff (2011, p. 362) suggests the following questions to address:
 
 ## Options for analyzing data with missing values
 
-* Complete case analysis (listwise deletiong) - Use the `na.omit` function to remove any rows with missing values. 
+* Complete case analysis (listwise deletion) - Use the `na.omit` function to remove any rows with missing values. 
 * Pairwise deletion
 * Multiple imputation
 * Simple imputation - replace values with a single value (e.g. mean, median, mode)
@@ -227,7 +227,7 @@ First introduced by Rubin (1987) as way of handling missing data. Steps for mult
 
 1. Impute the missing values by using an appropriate model which incorporates random variation.
 
-2. Repeat the first step multiple times (typicall 5 to 10 times is sufficient).
+2. Repeat the first step multiple times (typically 5 to 10 times is sufficient).
 
 3. Perform the desired analysis on each imputed dataset.
 
@@ -256,7 +256,7 @@ imp <- mice(sleep, printFlag=FALSE, seed=1234)
 imp
 ```
 
-## Checking Distributions of Imputated Values
+## Checking Distributions of Imputed Values
 
 If we assume the data is MCAR, then the imputations should have the same distribution as the observed data.
 
@@ -264,7 +264,7 @@ If we assume the data is MCAR, then the imputations should have the same distrib
 stripplot(imp, Dream~.imp, pch=20, cex=2)
 ```
 
-## Checking Distributions of Imputated Values
+## Checking Distributions of Imputed Values
 
 ```{r,fig.width=10,fig.height=5}
 stripplot(imp)
@@ -312,7 +312,7 @@ missing.cols <- c('nodegr', 're75') # The columns we will add missing values to
 missing.ratio <- 1.5                # Ratio of missingness for treatment-to-control
 ```
 
-Vectors indiciating which rows are treatment and control.
+Vectors indicating which rows are treatment and control.
 
 ```{r}
 treat.rows <- which(lalonde$treat == 1)
@@ -372,14 +372,14 @@ complete.mar <- complete(mice.mar)
 complete.nmar <- complete(mice.nmar)
 ```
 
-## Check the regerssion results (MAR)
+## Check the regression results (MAR)
 
 ```{r}
 lalonde.mar.glm <- glm(treat~., data=cbind(treat=Tr, complete.mar, shadow.matrix.mar))
 summary(lalonde.mar.glm)
 ```
 
-## Check the regerssion results (NMAR)
+## Check the regression results (NMAR)
 
 ```{r}
 lalonde.nmar.glm <- glm(treat~., data=cbind(treat=Tr, complete.nmar, shadow.matrix.nmar))
