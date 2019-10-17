@@ -15,13 +15,13 @@ September 12  | Data visualization                                 | [Slides](/s
 September 19  | Programming with R                                 | [Slides](/slides/2019-09-19-Class.html), [merge_all.R](https://raw.githubusercontent.com/jbryer/EPSY887-Fall2019/master/R/merge_all.R), [bootstrap.R](https://raw.githubusercontent.com/jbryer/EPSY887-Fall2019/master/R/bootstrap.R)
 September 26  | Documenting with R                                 | [Slides](/slides/2019-09-26-Class.html)
 October 3     | Working Session                                    |
-October 10    | TBD                                                |
-October 17    | TBD                                                |
-October 24    | TBD                                                |
+October 10    | Intro to Predictive Modeling and CART Methods      | [Slides](/slides/IntroPredictiveModeling.html)
+October 17    | Handling Missing Data in R                         |
+October 24    | Intro to Propensity Score Analysis                 |
 October 31    | TBD                                                |
-November 7    | **No class meeting .Possible GoToMeeting class.**  |
-November 14   | TBD                                                |
-November 21   | **No class meeting** - Video will be posted        |
+November 7    | **No class meeting**                               |
+November 14   | Working Session                                    |
+November 21   | **No class meeting**                               |
 November 28   | **No class - Happy Thanksgiving! 🦃**              |
 December 5    | Presentations                                      |
 December 12   | Presentations / Course wrap-up                     |
@@ -35,3 +35,7 @@ Possible topics:
 * Propensity score analysis
 * Text Analysis
 * Factor analysis
+* Simulations
+* Cluster analysis
+
+* Social network analysis
