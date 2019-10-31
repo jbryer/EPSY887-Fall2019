@@ -12,3 +12,5 @@ codebook2015 <- read_xlsx('datasets/pisa/2015/Codebook_CMB.xlsx')
 codebook2015 %>% filter(!is.na(NAME)) %>% View(title = 'PISA_Vars')
 
 pisa2015 <- readRDS('datasets/pisa/2015/PISA_Student.rds')
+
+korea <- pisa2015 %>% filter(CNT == 'Korea')
