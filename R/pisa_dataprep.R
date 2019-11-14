@@ -20,4 +20,4 @@ codebook2015 %>% filter(!is.na(NAME)) %>% View(title = 'PISA_Vars')
 pisa2015.student <- readRDS('datasets/pisa/2015/PISA_Student.rds')
 pisa2015.cognitive <- readRDS('datasets/pisa/2015/PISA_Cognitive.rds')
 
-korea <- pisa2015 %>% filter(CNT == 'Korea')
+korea <- pisa2015.student %>% filter(CNT == 'Korea')

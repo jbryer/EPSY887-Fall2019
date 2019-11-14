@@ -20,7 +20,7 @@ October 17    | Handling Missing Data in R                         | [Slides](/s
 October 24    | Intro to Propensity Score Analysis                 |
 October 31    | TBD                                                |
 November 7    | **No class meeting**                               |
-November 14   | Working Session                                    |
+November 14   | Working Session                                    | [Sample Presentation](/slides/Predicting_Retention.html), [Source]()
 November 21   | **No class meeting**                               |
 November 28   | **No class - Happy Thanksgiving! 🦃**              |
 December 5    | Presentations                                      |
