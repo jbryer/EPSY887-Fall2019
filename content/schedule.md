@@ -17,7 +17,7 @@ September 26  | Documenting with R                                 | [Slides](/s
 October 3     | Working Session                                    |
 October 10    | Intro to Predictive Modeling and CART Methods      | [Slides](/slides/IntroPredictiveModeling.html)
 October 17    | Handling Missing Data in R                         | [Slides](/slides/MissingData.html)
-October 24    | Intro to Propensity Score Analysis                 |
+October 24    | Intro to Propensity Score Analysis                 | [Slides](/slides/Intro_PSA.html)
 October 31    | TBD                                                |
 November 7    | **No class meeting**                               |
 November 14   | Working Session                                    | [Sample Presentation](/slides/Predicting_Retention.html), [Source](https://github.com/jbryer/EPSY887-Fall2019/blob/master/slides/Predicting_Retention.Rmd)
